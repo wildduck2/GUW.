@@ -1,0 +1,79 @@
+/*
+
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../base' as *;
+@use '../../utils' as *;
+
+/*
+
+    Header 
+
+*/
+
+.header {
+    &__nav {
+        @include container;
+        @include flex(flex, center, space-between);
+        padding-block: 1rem;
+
+        &__logo {
+            flex: 1;
+        }
+
+        &__container {
+            flex: 1;
+            @include flex(flex, center, space-between);
+
+            &__menu {
+                @include flex(flex, center, space-between);
+                gap: 3rem;
+
+                a {
+                    display: grid;
+                    gap: 0.5rem;
+
+                    & .dot {
+                        &.dot__active {
+                            width: 5px;
+                            height: 5px;
+                        }
+
+                        place-self: center;
+                        border-radius: 50%;
+                        background: var(--main-color);
+                        animation: var(--animation-smooth);
+                    }
+                }
+            }
+
+            &__btn {
+                @include flex(grid, center);
+                gap: 0.5rem;
+
+                div {
+                    width: 30px;
+                    height: 2px;
+                    background: var(--main-color);
+                    border-radius: 50rem;
+                    pointer-events: none;
+                    transition: transform 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+                }
+
+                &.active {
+                    div {
+                        &:nth-child(1) {
+                            transform: rotate(45deg) translate(6px, 3px);
+                        }
+
+                        &:nth-child(2) {
+                            transform: rotate(-45deg) translate(3px, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

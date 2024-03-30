@@ -1,0 +1,47 @@
+/*
+
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../utils' as u;
+
+/*
+
+    Typography
+
+*/
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: var(--f-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+h5,
+h6,
+p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+:root {
+    --f-body: clamp(0.9375rem, 0.6298076923076923rem + 0.4807692307692308vw, 1rem);
+    --f-sm: #{u.rem(12)};
+    --f-md: #{u.rem(13)};
+    --f-nor: #{u.rem(14.4)};
+    --f-lg: #{u.rem(16)};
+    --f-xl: #{u.rem(19)};
+    --f-2xl: #{u.rem(25)};
+}

@@ -1,0 +1,58 @@
+/*
+
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../utils' as *;
+@use './typography' as *;
+
+/*
+
+    Globals
+
+*/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: nonw;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--main-color);
+    font-size: var(--f-body);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    user-select: none;
+    -moz-user-select: none;
+}
+
+button,
+input,
+textarea {
+    background-color: none;
+}
+
+main {
+    margin: 0 auto;
+    display: grid;
+    padding-top: 1rem;
+}

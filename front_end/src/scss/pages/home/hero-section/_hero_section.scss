@@ -1,0 +1,123 @@
+/*
+
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    HERO SECTION 
+
+*/
+
+.hero__section {
+    @include container;
+    @include section;
+    @include flex(flex, flex-start, space-between);
+
+    &__right {
+        @include flex(grid, center, flex-start);
+        max-width: 600px;
+        gap: 5rem;
+
+        &__top {
+            @include flex(grid, center);
+            gap: 1.5rem;
+
+            &__title {
+                font-size: 3rem;
+                font-weight: 600;
+                color: var(--main-color);
+            }
+
+            &__text {
+                font-size: 1.1rem;
+                max-width: 500px;
+                font-weight: 500;
+                color: var(--second-color);
+            }
+
+            &__btn {
+                @include button(150px, 50px);
+            }
+        }
+
+        &__bottom {
+            @include flex(grid);
+            place-self: flex-end;
+            gap: 2rem;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: var(--main-color);
+            }
+
+            p {
+                color: var(--second-color);
+            }
+
+            &>div:first-child {
+                @include flex(flex, center);
+                gap: 2rem;
+
+                &>div {
+                    @include hero_cards;
+                    flex: 1;
+
+                    &:first-child {
+                        background: var(--third-color);
+                    }
+
+                    &:last-child {
+                        background: var(--forth-color);
+                    }
+                }
+            }
+
+            &>div:last-child {
+                @include hero_cards;
+                @include flex(flex, center);
+
+                &>div {
+                    @include flex(grid, center);
+                    gap: 0.5rem;
+                }
+            }
+        }
+    }
+
+    &__left {
+        position: relative;
+
+        &__svg {
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            display: flex;
+            top: -3.7rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .animation {
+                animation: rotate 15s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+                transform-origin: center center;
+            }
+
+            @keyframes rotate {
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        &__img {
+            img {
+                width: 625px;
+            }
+        }
+    }
+}
