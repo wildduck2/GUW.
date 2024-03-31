@@ -1,0 +1,48 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../base' as *;
+@use '../../utils' as *;
+
+/*
+
+    LOADER 
+
+*/
+
+.loader__wrappper {
+    .loader {
+        position: fixed;
+        width: 101%;
+        height: 101%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--main-color);
+        z-index: 100;
+        @include flex(flex, flex-end, flex-end);
+
+        &>h2 {
+            font-size: 7.5rem;
+            font-weight: 100;
+            color: var(--white-color);
+            text-align: left;
+            padding: 0 0 7vw 7vw;
+
+            .word {
+                overflow: hidden;
+
+                .char {
+                    transform: translateY(100%) scale(1) rotate(0.001deg);
+                }
+            }
+        }
+    }
+
+    .loader_second {
+        background: var(--second-color);
+        z-index: 99;
+    }
+}

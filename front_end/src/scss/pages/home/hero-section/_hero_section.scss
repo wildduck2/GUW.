@@ -26,9 +26,17 @@
             @include flex(grid, center);
             gap: 1.5rem;
 
+            .line {
+                overflow: hidden;
+
+                .word {
+                    transform: translateY(100%) scale(1) rotate(0.001deg);
+                }
+            }
+
             &__title {
                 font-size: 3rem;
-                font-weight: 600;
+                font-weight: 500;
                 color: var(--main-color);
             }
 
@@ -40,13 +48,14 @@
             }
 
             &__btn {
-                @include button(150px, 50px);
+                @include button(150px, 60px);
             }
         }
 
         &__bottom {
             @include flex(grid);
             place-self: flex-end;
+            padding-block: 0.5rem;
             gap: 2rem;
 
             h2 {
@@ -61,6 +70,7 @@
 
             &>div:first-child {
                 @include flex(flex, center);
+                overflow: hidden;
                 gap: 2rem;
 
                 &>div {
@@ -70,9 +80,11 @@
 
                     &:first-child {
                         background: var(--third-color);
+                        transform: translateX(110%) scale(1) rotate(0.001deg);
                     }
 
                     &:last-child {
+                        transform: translateY(-110%) scale(1) rotate(0.001deg);
                         background: var(--forth-color);
                     }
                 }
@@ -80,7 +92,9 @@
 
             &>div:last-child {
                 @include hero_cards;
+                overflow: hidden;
                 @include flex(flex, center);
+                transform: translateY(110%) scale(1) rotate(0.001deg);
                 gap: 5.5rem;
 
                 &>div {
