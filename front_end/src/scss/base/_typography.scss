@@ -33,10 +33,16 @@ h6,
 p {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--main-color);
+    // color: var(--main-color);
 }
 
 :root {
+    --arabic-font: 'Noto Sans Arabic', sans-serif;
+    --english-font: 'Lexend Deca', sans-serif;
+    --section-padding: clamp(2rem, 0.29268292682926833rem + 9.75609756097561vw, 12rem);
+    --container-padding: clamp(2.5rem, 1.5609756097560976rem + 5.365853658536586vw, 8rem);
+    --gap-padding: clamp(1.5em, 4vw, 2.5em);
+
     --f-body: clamp(0.9375rem, 0.6298076923076923rem + 0.4807692307692308vw, 1rem);
     --f-sm: #{u.rem(12)};
     --f-md: #{u.rem(13)};

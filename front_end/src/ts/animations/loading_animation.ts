@@ -15,11 +15,14 @@ export const home_loader_animation = () => {
     const tl = gsap.timeline({});
 
     tl.set('html', {
-        overflow: 'hidden'
+        // overflow: 'hidden'
+        onStart: () => {
+            window.scrollTo(0, 0);
+        }
     });
 
-    tl.set('header', {
-        yPercent: 20
+    tl.set('.header', {
+        yPercent: -20
     });
 
     tl.set(
@@ -48,12 +51,12 @@ export const home_loader_animation = () => {
     });
 
     tl.set('.hero__section__right__top__btn', {
-        yPercent: 100,
+        yPercent: 101,
         pointerEvents: 'none'
     });
 
     tl.set('.once-in', {
-        yPercent: 20
+        yPercent: -20
     });
 
     tl.set('.loader', {
@@ -94,12 +97,11 @@ export const home_loader_animation = () => {
         'header',
         {
             yPercent: 0,
-            stagger: 0.4,
             duration: 0.8,
             ease: 'Power4.easeInOut',
             delay: 0.2
         },
-        '<.3'
+        '<.4'
     );
 
     tl.to(
@@ -151,8 +153,6 @@ export const home_loader_animation = () => {
         {
             x: 0,
             y: 0,
-            // yPercent: 0,
-            // XPercent: 0,
             stagger: { amount: 0.4 },
             duration: 0.8,
             ease: 'Power3.easeInOut'
@@ -163,7 +163,7 @@ export const home_loader_animation = () => {
     tl.to(
         '.hero__section__left__img',
         {
-            height: '700',
+            height: '765',
             duration: 0.8,
             ease: 'Power4.easeInOut'
         },

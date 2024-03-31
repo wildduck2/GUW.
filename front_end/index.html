@@ -15,6 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap"
+        rel="stylesheet" />
+
     <title>GOLDEN UNITED WATERPOOFING</title>
 </head>
 
@@ -28,8 +32,32 @@
             <div class="loader loader_second"></div>
         </div>
 
+        <!--NOTE: =========  MOUSE POSE  ========== -->
+        <div class="mouse-pos-list-image active">
+            <div class="mouse-pos-list-image-bounce">
+                <div class="float-image-wrap">
+                    <li class="float-image-item">
+                        <div class="overlay-image"></div>
+                    </li>
+                    <li class="float-image-item">
+                        <div class="overlay-image"></div>
+                    </li>
+                    <li class="float-image-item">
+                        <div class="overlay-image"></div>
+                    </li>
+                    <li class="float-image-item">
+                        <div class="overlay-image"></div>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="mouse-pos-list-btn no-select"></div>
+        <div class="mouse-pos-list-span no-select">
+            <p>View</p>
+        </div>
+
         <!--NOTE: =========  HEADER  ========== -->
-        <header class="header once-in">
+        <header class="header">
             <nav class="header__nav">
                 <a class="header__nav__logo magnetic" href="/index.html">
                     <img src="/src/assets/imgs/logo.png" alt="logo" class="magnetic" data-strength="20"
@@ -39,25 +67,27 @@
                 <div class="header__nav__container">
                     <ul class="header__nav__container__menu">
                         <li>
-                            <a class="as magnetic" href="/credits.html" data-strength="20" data-strength-text="10">
+                            <a class="btn-text magnetic" href="/credits.html" data-strength="20"
+                                data-strength-text="10">
                                 <span> الاعتمادات </span>
                                 <div class="dot btn-text-m"></div>
                             </a>
                         </li>
                         <li>
-                            <a class="as magnetic" href="/about.html" data-strength="20" data-strength-text="10">
+                            <a class="btn-text magnetic" href="/about.html" data-strength="20" data-strength-text="10">
                                 <span>حولنا</span>
                                 <div class="dot btn-text-m"></div>
                             </a>
                         </li>
                         <li>
-                            <a class="as magnetic" href="/works.html" data-strength="20" data-strength-text="10">
+                            <a class="btn-text magnetic" href="/works.html" data-strength="20" data-strength-text="10">
                                 <span>محفظة الأعمال</span>
                                 <div class="dot btn-text-m"></div>
                             </a>
                         </li>
                         <li>
-                            <a class="as magnetic" href="/contact.html" data-strength="20" data-strength-text="10">
+                            <a class="btn-text magnetic" href="/contact.html" data-strength="20"
+                                data-strength-text="10">
                                 <span> اتصل بنا</span>
                                 <div class="dot btn-text-m"></div>
                             </a>
@@ -88,7 +118,7 @@
 
                         <button type="button" class="magnetic hero__section__right__top__btn" data-strength="25"
                             data-strength-text="10">
-                            <span class="btn-text-m">ابدأ</span>
+                            <span class="btn-text-m btn-solid-horizon">ابدأ</span>
                         </button>
                     </div>
                     <div class="hero__section__right__bottom">
@@ -252,7 +282,7 @@
                 <div class="button__wrapper">
                     <button type="button" class="magnetic about__section__btn" data-strength="50"
                         data-strength-text="20">
-                        <span class="btn-text-m">استكشف</span>
+                        <span class="btn-text-m btn-solid-horizon">استكشف</span>
                     </button>
                 </div>
 
@@ -345,7 +375,78 @@
                 </div>
             </section>
 
-            <section></section>
+            <section class="works__section">
+                <h2 class="works__section__title">الأعمال الأخيرة</h2>
+
+                <div class="projects-wrapper menu once-in">
+                    <ul class="float-project-container">
+                        <li class="project show" data-type="">
+                            <div class="stripe animate"></div>
+                            <a href="#" class="row">
+                                <picture>
+                                    <img src="/src/assets/img/projects/proj1.png" alt="proj1" />
+                                </picture>
+                                <div class="flex-col name">
+                                    <h4><span>جسر أبو داود</span></h4>
+                                </div>
+                                <div class="flex-col service animate">
+                                    <p>عزل مائى لبالطات الجسر العلوية</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="project show" data-type="">
+                            <div class="stripe animate"></div>
+                            <a href="#" class="row">
+                                <picture>
+                                    <img src="/src/assets/img/projects/proj1.png" alt="proj1" />
+                                </picture>
+                                <div class="flex-col name">
+                                    <h4><span>جسر حليمة السعدية</span></h4>
+                                </div>
+                                <div class="flex-col service animate">
+                                    <p>عزل مائى لقواعد الجسر وبالطات الجسر العلوية</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="project show" data-type="">
+                            <div class="stripe animate"></div>
+                            <a href="#" class="row">
+                                <picture>
+                                    <img src="/src/assets/img/projects/proj1.png" alt="proj1" />
+                                </picture>
+                                <div class="flex-col name">
+                                    <h4><span>جسر بنى مالك</span></h4>
+                                </div>
+                                <div class="flex-col service animate">
+                                    <p>عزل مائى لقواعد الجسروبالطات الجسر العلويةة</p>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="project show" data-type="">
+                            <div class="stripe animate"></div>
+                            <a href="#" class="row">
+                                <picture>
+                                    <img src="/src/assets/img/projects/proj1.png" alt="proj1" />
+                                </picture>
+                                <div class="flex-col name">
+                                    <h4><span>جسر دوار الدراجة</span></h4>
+                                </div>
+                                <div class="flex-col service animate">
+                                    <p>عزل مائى لقواعد الجسروبالطات الجسر العلوية</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a class="works__section__btn" href="./works.html">
+                    <button class="btn-solid-horizon works-btn magnetic" data-strength="50" data-strength-text="15">
+                        <div class="btn-fill"></div>
+                        <div class="btn-text btn-text-m change">More Works<sup>10</sup></div>
+                    </button>
+                </a>
+            </section>
         </main>
     </div>
 

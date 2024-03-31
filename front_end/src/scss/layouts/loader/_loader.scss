@@ -28,8 +28,10 @@
             font-size: 7.5rem;
             font-weight: 100;
             color: var(--white-color);
+            font-family: var(--english-font);
             text-align: left;
             padding: 0 0 7vw 7vw;
+            line-height: 1.2;
 
             .word {
                 overflow: hidden;

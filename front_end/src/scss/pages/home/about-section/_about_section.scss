@@ -33,7 +33,7 @@
     &>h2 {
         max-width: 1100px;
         font-size: 3.3rem;
-        font-weight: 500;
+        font-weight: 400;
     }
 
     &>p {
@@ -44,10 +44,11 @@
 
     .button__wrapper {
         pointer-events: none;
+        margin-block: 1rem 2rem;
         overflow: hidden;
 
         &>button {
-            @include button(170px, 70px);
+            @include button;
             opacity: 0.5;
             transform: translateY(100%) scale(1) rotate(0.001deg);
         }

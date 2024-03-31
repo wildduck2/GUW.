@@ -15,8 +15,35 @@
     --third-color: #f4f4f4;
     --forth-color: #c6d9e1;
     --white-color: #ffffff;
+    --gray-gray: #999d9e;
+
+    --color-border: rgba(28, 29, 32, 0.175);
+    --color-border-solid: #d2d2d2;
+    --color-border-light: rgba(255, 255, 255, 0.2);
+    --color-border-solid-light: #545557;
 
     --animation-fast: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
     --animation-smooth: all 0.7s cubic-bezier(0.7, 0, 0.3, 1);
     --animation-slow: all 0.9s cubic-bezier(0.7, 0, 0.3, 1);
 }
+
+$arrOfImages: (
+    1: '/src/assets/imgs/projects/2.png',
+    2: '/src/assets/imgs/projects/1.png',
+    3: '/src/assets/imgs/projects/3.png',
+    4: '/src/assets/imgs/projects/4.png'
+);
+
+$arrOfColor: (
+    1: rgb(220, 208, 194),
+    2: rgb(126, 126, 126),
+    3: rgb(216, 211, 205),
+    4: rgb(72, 73, 74),
+    5: rgb(16, 16, 16),
+    6: rgb(54, 54, 55),
+    7: rgb(177, 169, 148),
+    8: rgb(55, 55, 55),
+    9: rgb(194, 194, 194),
+    10: rgb(228, 156, 74),
+    11: rgb(98, 109, 110)
+);

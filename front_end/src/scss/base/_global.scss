@@ -20,7 +20,7 @@
     padding: 0;
     box-sizing: border-box;
     user-select: nonw;
-    font-family: 'Lexend Deca', sans-serif;
+    // font-family: 'Lexend Deca', sans-serif;
 }
 
 html {
@@ -29,12 +29,14 @@ html {
 }
 
 body {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: var(--arabic-font);
+    line-height: 1.5;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     color: var(--main-color);
     font-size: var(--f-body);
+    overflow-x: hidden;
 }
 
 ul {

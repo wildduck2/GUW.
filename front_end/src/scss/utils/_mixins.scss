@@ -5,6 +5,7 @@
 */
 @use './functions' as f;
 @use './breakpoints' as u;
+@use './colors' as c;
 
 /*
 
@@ -31,14 +32,12 @@
 }
 
 @mixin section {
-    padding-block: 5rem 10rem;
+    padding-block: 4rem 10rem;
     width: 100%;
 }
 
-@mixin button($width, $height) {
+@mixin button {
     @include flex(grid, center);
-    width: $width;
-    height: $height;
     border-radius: 50rem;
     border-color: transparent;
     color: var(--white-color);
@@ -55,4 +54,60 @@
     h2 {
         margin-bottom: 0.5rem;
     }
+}
+
+@mixin border {
+    -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-border);
+    box-shadow: inset 0px 0px 0px 1px var(--color-border);
+}
+
+@mixin magnaticButton {
+    font-size: 1rem;
+    font-weight: 500;
+    will-change: transform;
+    transform: translateZ(0) rotate(0.001deg);
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    overflow: hidden;
+    background: var(--main-color);
+    color: var(--white-color);
+
+    &>* {
+        pointer-events: none;
+    }
+}
+
+@mixin floatImage($class) {
+    @each $index, $color in c.$arrOfColor {
+        &:nth-child(#{$index}) {
+            background-color: $color;
+        }
+    }
+
+    @each $index, $image in c.$arrOfImages {
+        &:nth-child(#{$index}) #{$class} {
+            width: clamp(10em, 27.5vw, 24em);
+            height: 290px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url($image);
+        }
+    }
+}
+
+@mixin count {
+    display: inline-block;
+    position: absolute;
+    margin-left: 0.25em;
+    opacity: 0.6;
+    font-size: 0.7em;
+    transform: translate(20%, -15%);
+    width: 0;
+    top: 0;
+    right: -0.2em;
 }

@@ -1,0 +1,53 @@
+/*
+
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../base' as *;
+@use '../../utils' as *;
+
+/*
+
+    MAGNETIC BUTTON 
+
+*/
+
+.btn-text {
+    color: var(--main-color);
+    font-size: clamp(0.8rem, 0.7445544554455447rem + 0.3168316831683168vw, 1rem);
+
+    a {
+        color: var(--main-color);
+    }
+}
+
+.btn-radius {
+    @include magnaticButton;
+    width: clamp(120px, 18vw, 200px);
+    height: clamp(120px, 18vw, 200px);
+    border-radius: 50%;
+}
+
+.btn-solid-horizon {
+    @include magnaticButton;
+    @include border;
+    padding-inline: clamp(0.5rem, 8vw, 4rem);
+    padding-block: clamp(0.5rem, 5vw, 1.8rem);
+    border-radius: 6.25rem;
+}
+
+.btn-fill {
+    display: block;
+    background: var(--main-color);
+    position: absolute;
+    width: 150%;
+    height: 200%;
+    border-radius: 50%;
+    top: -50%;
+    left: -25%;
+    transform: translate3d(0, -76%, 0);
+    will-change: transform;
+    z-index: -1;
+    pointer-events: none;
+}

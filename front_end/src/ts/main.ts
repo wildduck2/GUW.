@@ -1,4 +1,4 @@
-import { MagnaticObject, home_loader_animation, text_weight } from './animations';
+import { MagnaticObject, home_loader_animation, text_weight, floatImage } from './animations';
 
 import { hero_animation, about_animation } from './pages';
 import { menu_functionality } from './layouts';
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     text_weight();
+    floatImage();
     home_loader_animation();
     MagnaticObject();
     menu_functionality();
