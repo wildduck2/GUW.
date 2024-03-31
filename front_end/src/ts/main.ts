@@ -1,7 +1,18 @@
 import { MagnaticObject } from './animations';
+import { hero_animation, about_animation } from './pages';
 import { menu_functionality } from './layouts';
+import LocomotiveScroll from 'locomotive-scroll';
 
-MagnaticObject();
-menu_functionality();
+document.addEventListener('DOMContentLoaded', () => {
+    MagnaticObject();
+    menu_functionality();
 
-//NOTE: this is acooment
+    about_animation();
+
+    // hoverEffect();
+});
+
+// new LocomotiveScroll({
+//     el: document.querySelector('[data-scroll-container]'),
+//     smooth: true
+// });

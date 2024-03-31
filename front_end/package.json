@@ -19,6 +19,8 @@
   "dependencies": {
     "@barba/core": "^2.9.7",
     "gsap": "^3.12.5",
-    "sass": "^1.72.0"
+    "locomotive-scroll": "^4.1.4",
+    "sass": "^1.72.0",
+    "split-type": "^0.3.4"
   }
 }

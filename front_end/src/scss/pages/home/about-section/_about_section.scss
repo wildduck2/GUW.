@@ -1,0 +1,80 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    ABOUT SECTION 
+
+*/
+
+.about__section {
+    @include container;
+    @include section;
+    @include flex(grid, center, center);
+    gap: 1.5rem;
+    text-align: center;
+    place-items: center;
+
+    .line {
+        display: block !important;
+        overflow: hidden;
+
+        &>.word {
+            transform: translateY(100%) scale(1) rotate(0.001deg);
+            display: inline-block;
+        }
+    }
+
+    &>h2 {
+        max-width: 1100px;
+        font-size: 3.3rem;
+        font-weight: 500;
+    }
+
+    &>p {
+        font-size: 1rem;
+        color: var(--second-color);
+        max-width: 700px;
+    }
+
+    .button__wrapper {
+        pointer-events: none;
+        overflow: hidden;
+
+        &>button {
+            @include button(150px, 50px);
+            opacity: 0.5;
+            transform: translateY(100%) scale(1) rotate(0.001deg);
+        }
+    }
+
+    .logos__wrapper {
+        @include flex(flex, center, space-around);
+        // margin-top: 3rem;
+        // gap: 1rem;
+        // overflow: hidden;
+    }
+
+    &__logos {
+        margin-top: 3rem;
+        @include flex(flex, center, space-around);
+        min-width: 100%;
+        gap: 1rem;
+        flex-shrink: 0;
+        overflow-y: hidden;
+        transform: translateX(50%);
+
+        li {
+            transform: translateX(0%) translateY(120%) scale(1) rotate(0.001deg);
+        }
+
+        img {
+            width: 77%;
+        }
+    }
+}

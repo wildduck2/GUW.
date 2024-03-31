@@ -1,1 +1,1 @@
-export * from "./magnatic";
+export * from './magnatic';
