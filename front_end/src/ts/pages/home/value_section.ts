@@ -1,7 +1,10 @@
+import ScrollTrigger from 'gsap/all';
 import gsap from 'gsap';
 import SplitType from 'split-type';
 
 export const values_animation = () => {
+    gsap.registerPlugin(ScrollTrigger);
+
     // NOTE: spliting the title to words
     new SplitType('.values__section__wrapper__title', {
         types: 'words'
@@ -39,15 +42,15 @@ export const values_animation = () => {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.values__section',
-            start: '0% 30%',
-            end: 'top bottom',
+            start: 'top top',
+            end: '+=1400',
             scrub: 1,
             // invalidateOnRefresh: true,
-            // pin: '.values__section',
-            // pinType: 'transform',
-            // pinSpacing: 'margin',
-            // pinnedContainer: '.values__section',
-            // anticipatePin: 1,
+            pin: '.values__section',
+            pinType: 'transform',
+            pinSpacing: '-100%',
+            pinnedContainer: '.values__section',
+            anticipatePin: 1,
             markers: true
         }
     });
@@ -57,7 +60,6 @@ export const values_animation = () => {
         {
             y: 0,
             stagger: 0.1,
-            duration: 0.8,
             ease: 'none'
         },
         '<'
@@ -66,13 +68,11 @@ export const values_animation = () => {
     tl.to('.values__section__wrapper__title .word', {
         yPercent: -124,
         stagger: 0.1,
-        duratin: 0.8,
         ease: 'none'
     });
 
     tl.to('.value__2', {
         yPercent: -100,
-        duration: 0.5,
         ease: 'none'
     });
 
@@ -81,7 +81,6 @@ export const values_animation = () => {
         {
             yPercent: 0,
             stagger: 0.1,
-            duration: 0.8,
             ease: 'none'
         },
         '+=0.5'
@@ -91,7 +90,6 @@ export const values_animation = () => {
         '.values__section__content__title .word',
         {
             yPercent: 0,
-            duration: 0.8,
             ease: 'none'
         },
         '<'
@@ -111,7 +109,6 @@ export const values_animation = () => {
         '.values__section__content__btn',
         {
             yPercent: 0,
-            duration: 0.5,
             ease: 'none'
         },
         '<'

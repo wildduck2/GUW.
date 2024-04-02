@@ -1,7 +1,9 @@
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import SplitType from 'split-type';
 
 export const about_animation = () => {
+    gsap.registerPlugin(ScrollTrigger);
     const aboutSection = document.querySelector('.about__section') as HTMLTableSectionElement;
 
     // NOTE: spliting text
@@ -15,12 +17,11 @@ export const about_animation = () => {
     // NOTE: top elements
     const tl = gsap.timeline({
         scrollTrigger: {
-            trigger: aboutSection,
-            start: 'top 60%',
-            end: '90% bottom',
+            trigger: '.about__section',
+            start: 'top 80%',
+            end: 'bottom bottom',
             scrub: 1,
             toggleActions: 'play none none none'
-            // markers: true
         },
 
         defaults: {
@@ -62,10 +63,8 @@ export const about_animation = () => {
         scrollTrigger: {
             trigger: aboutSection,
             start: 'top 40%',
-            end: '130% bottom',
-            // scrub: 1,
+            end: 'bottom bottom',
             toggleActions: 'play none none none'
-            // markers: true
         }
     });
 
