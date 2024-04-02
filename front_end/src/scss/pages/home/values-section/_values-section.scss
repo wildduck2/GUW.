@@ -1,0 +1,108 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    VALUES SECTION 
+
+*/
+
+.values__section {
+    // @include section;
+    position: relative;
+    gap: 3rem;
+    margin-block: 4em 10em;
+    overflow: hidden;
+
+    &__wrapper {
+        @include flex(flex, center);
+        min-height: 130vh;
+        max-width: auto;
+        background: var(--main-color);
+        gap: 10em;
+        overflow: hidden;
+
+        &:nth-child(1) {
+            z-index: 2;
+        }
+
+        &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 388;
+
+            h2 {
+                position: initial;
+                @include split_heading(7.5rem);
+                text-align: start;
+                padding: 0 7vw 7vw 0;
+                max-width: 20ch;
+
+                &>div {
+                    overflow: hidden;
+                }
+
+                .word {
+                    transform: translateY(125%);
+                }
+            }
+        }
+    }
+
+    h2,
+    p {
+        color: var(--white-color);
+    }
+
+    &__img,
+    .values__section__video {
+        width: 50vw;
+        height: 130vh;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        overflow: hidden;
+
+        video {
+            width: 50vw;
+            height: 130vh;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        @include flex(grid, center);
+        place-items: flex-start;
+
+        gap: 3rem;
+
+        &__title {
+            font-size: 3.3rem;
+            font-weight: 400;
+            overflow: hidden;
+        }
+
+        &__text {
+            max-width: 600px;
+            font-size: 1.2rem;
+
+            .line {
+                overflow: hidden;
+            }
+        }
+
+        .values__btn__wrapper {
+            overflow: hidden;
+        }
+
+        &__btn {
+            background: var(--white-color);
+        }
+    }
+}

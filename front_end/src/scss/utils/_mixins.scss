@@ -96,6 +96,8 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-image: url($image);
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
         }
     }
 }
@@ -110,4 +112,20 @@
     width: 0;
     top: 0;
     right: -0.2em;
+}
+
+@mixin split_heading($s) {
+    font-size: $s;
+    font-weight: 100;
+    color: var(--white-color);
+    text-align: left;
+    line-height: 1.2;
+
+    .word {
+        overflow: hidden;
+
+        .char {
+            transform: translateY(100%) scale(1) rotate(0.001deg);
+        }
+    }
 }

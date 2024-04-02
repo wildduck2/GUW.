@@ -2,7 +2,9 @@ import gsap from 'gsap';
 import SplitType from 'split-type';
 
 export const text_weight = () => {
-    const fontWeightItems = document.querySelectorAll('[data-animate=font-weight]');
+    const fontWeightItems: NodeListOf<HTMLElement> = document.querySelectorAll(
+        '[data-animate=font-weight]'
+    );
     const maxDistance = 300; // Adjust the maximum distance for font weight change as needed
     const maxFontWeight = 800; // Maximum font weight
     const minFontWeight = 100; // Minimum font weight
@@ -14,11 +16,11 @@ export const text_weight = () => {
             const splitCharType = new SplitType(item, { types: 'chars,words' });
             splitChars = splitCharType.chars;
         } else {
-            splitChars = item.querySelectorAll('.char');
+            splitChars = item.querySelectorAll('.char') as NodeListOf<HTMLElement>;
         }
 
-        splitChars.forEach((char) => {
-            char.dataset.initialWeight = parseInt(window.getComputedStyle(char).fontWeight); // Store initial font weight
+        splitChars?.forEach((char) => {
+            char.dataset.initialWeight = parseInt(window.getComputedStyle(char).fontWeight).toString(); // Store initial font weight
 
             char.addEventListener('mouseenter', () => {
                 const charTl = gsap.timeline();
@@ -31,7 +33,7 @@ export const text_weight = () => {
             char.addEventListener('mouseleave', () => {
                 const charTl = gsap.timeline();
                 charTl.to(char, {
-                    fontWeight: parseInt(char.dataset.initialWeight),
+                    fontWeight: parseInt(char.dataset.initialWeight!),
                     duration: 0.5
                 });
             });
@@ -43,13 +45,13 @@ export const text_weight = () => {
         const mouseY = event.pageY;
 
         fontWeightItems.forEach((item) => {
-            const chars = item.querySelectorAll('.char');
+            const chars = item.querySelectorAll('.char') as NodeListOf<HTMLElement>;
             chars.forEach((char) => {
                 const itemPosition = char.getBoundingClientRect();
                 const itemWidth = char.offsetWidth;
                 const itemHeight = char.offsetHeight;
                 const itemCenterX = itemPosition.left + itemWidth / 2;
-                const itemCenterY = itemPosition.top + itemHeight / 2;
+                const itemCenterY = itemPosition.top + itemHeight / 2 + window.scrollY;
                 const distance = Math.sqrt(
                     Math.pow(mouseX - itemCenterX, 2) + Math.pow(mouseY - itemCenterY, 2)
                 );
