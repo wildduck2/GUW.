@@ -61,8 +61,7 @@ main {
 }
 
 *::-webkit-scrollbar {
-    width: 0.2rem;
-    display: none;
+    width: 1.2rem;
     border-radius: 0.5rem;
 }
 
@@ -77,7 +76,7 @@ main {
 
 *::-webkit-scrollbar {
     position: absolute;
-    width: 1px;
+    width: 4px;
     height: 1px;
 }
 

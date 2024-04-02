@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-export const MagnaticObject = () => {
+export const initMagnetic = () => {
     const domElemetns = document.querySelectorAll('.magnetic') as NodeListOf<HTMLElement>;
 
     let boundingClientRect: DOMRect,

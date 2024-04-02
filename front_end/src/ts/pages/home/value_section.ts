@@ -48,10 +48,10 @@ export const values_animation = () => {
             // invalidateOnRefresh: true,
             pin: '.values__section',
             pinType: 'transform',
-            pinSpacing: '-100%',
-            pinnedContainer: '.values__section',
-            anticipatePin: 1,
-            markers: true
+            // pinSpacing: '-100%',
+            // pinnedContainer: '.values__section',
+            anticipatePin: 1
+            // markers: true
         }
     });
 
@@ -83,7 +83,7 @@ export const values_animation = () => {
             stagger: 0.1,
             ease: 'none'
         },
-        '+=0.5'
+        '-=0.5'
     );
 
     tl.to(
@@ -92,7 +92,7 @@ export const values_animation = () => {
             yPercent: 0,
             ease: 'none'
         },
-        '<'
+        '+=0.2'
     );
 
     tl.to(
@@ -113,4 +113,8 @@ export const values_animation = () => {
         },
         '<'
     );
+
+    tl.set('.values__btn__wrapper', {
+        overflow: 'initial'
+    });
 };

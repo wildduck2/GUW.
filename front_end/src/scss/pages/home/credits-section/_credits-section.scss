@@ -1,0 +1,107 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    CREDITS SECTION 
+
+*/
+
+.credits__section {
+    @include section;
+    overflow: hidden;
+
+    &__wrapper {
+        @include container;
+        @include flex(grid, center, center);
+        max-width: 100%;
+        gap: 2rem;
+        text-align: center;
+
+        .line {
+            display: block !important;
+            overflow: hidden;
+
+            &>.word {
+                display: inline-block;
+            }
+        }
+
+        &__title {
+            overflow: hidden;
+            font-size: 3.3rem;
+            font-weight: 400;
+        }
+
+        &__text {
+            font-size: 1rem;
+            color: var(--second-color);
+            max-width: 700px;
+        }
+
+        &__wrapper {
+            pointer-events: none;
+            margin-block: 1rem 2rem;
+            overflow: hidden;
+
+            &__btn {
+                @include button;
+                background: var(--white-color);
+                margin-inline: auto;
+                opacity: 0.5;
+            }
+        }
+
+        &__wrapper {
+            @include flex(flex, center, center);
+        }
+
+        &__list {
+            @include flex(flex, center);
+            gap: 7rem;
+            // margin-block: 4rem 2rem;
+            padding-inline: 3.5rem;
+
+            &__item {
+                @include flex(grid, center, center);
+                @include border;
+                padding: 1.3rem 1.6rem;
+                border-radius: 0.7em;
+                min-width: 350px;
+                gap: 0.5rem;
+
+                &>div {
+                    @include flex(flex, center, space-between);
+
+                    img {
+                        width: 20px;
+                    }
+
+                    h3 {
+                        font-family: var(--english-font);
+                        font-size: 2rem;
+                        font-weight: 300;
+                        order: -1;
+                    }
+                }
+
+                &>p {
+                    font-size: 1rem;
+                    color: var(--second-color);
+                    text-align: start;
+                }
+            }
+        }
+    }
+
+    &>.wrapper__2 {
+        @include flex(flex, center, space-around);
+        margin-bottom: 4rem;
+        overflow: hidden;
+    }
+}

@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-export function floatImage() {
+export function initMousePose() {
     const cursorImage = document.querySelector<HTMLDivElement>('.mouse-pos-list-image');
     const cursorBtn = document.querySelector<HTMLDivElement>('.mouse-pos-list-btn');
     const cursorSpan = document.querySelector<HTMLDivElement>('.mouse-pos-list-span');

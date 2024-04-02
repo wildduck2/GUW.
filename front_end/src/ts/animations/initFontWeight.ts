@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import SplitType from 'split-type';
 
-export const text_weight = () => {
+export const initFontWeight = () => {
     const fontWeightItems: NodeListOf<HTMLElement> = document.querySelectorAll(
         '[data-animate=font-weight]'
     );
