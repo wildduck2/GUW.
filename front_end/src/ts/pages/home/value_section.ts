@@ -23,10 +23,6 @@ export const values_animation = () => {
     //     yPercent: 124
     // });
 
-    gsap.set('.values__section__video video', {
-        yPercent: 100
-    });
-
     gsap.set('.values__section__content__title .word', {
         yPercent: 100
     });
@@ -75,16 +71,6 @@ export const values_animation = () => {
         yPercent: -100,
         ease: 'none'
     });
-
-    tl.to(
-        '.values__section__video video',
-        {
-            yPercent: 0,
-            stagger: 0.1,
-            ease: 'none'
-        },
-        '-=0.5'
-    );
 
     tl.to(
         '.values__section__content__title .word',

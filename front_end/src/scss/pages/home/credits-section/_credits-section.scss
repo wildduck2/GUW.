@@ -41,7 +41,7 @@
         &__text {
             font-size: 1rem;
             color: var(--second-color);
-            max-width: 700px;
+            max-width: 600px;
         }
 
         &__wrapper {
@@ -100,8 +100,7 @@
     }
 
     &>.wrapper__2 {
-        @include flex(flex, center, space-around);
-        margin-bottom: 4rem;
-        overflow: hidden;
+        @include flex(grid, center, space-around);
+        margin-block: 4rem;
     }
 }

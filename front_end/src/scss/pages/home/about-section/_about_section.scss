@@ -48,15 +48,10 @@
         overflow: hidden;
 
         &>button {
-            @include button;
             opacity: 0.5;
             transform: translateY(100%) scale(1) rotate(0.001deg);
-            // background: var(--white-color);
-            //
-            // span {
-            //     color: var(--main-color);
-            //     background: transparent;
-            // }
+            background: var(--white-color);
+            color: var(--main-color);
         }
     }
 

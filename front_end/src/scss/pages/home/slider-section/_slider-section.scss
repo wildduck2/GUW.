@@ -1,0 +1,80 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    SLIDER SECTION 
+
+*/
+
+.slider__section {
+    position: relative;
+    @include flex(grid, center, center);
+    gap: 3.4rem;
+    background: var(--main-color);
+    padding-block: 10rem;
+    margin-block: 10rem;
+
+    &>div {
+        @include flex(grid, center, center);
+        gap: 3.4rem;
+    }
+
+    &__slider {
+        @include container;
+        @include flex(flex, cneter, cneter);
+        gap: 3.4rem;
+        text-align: center;
+        place-items: center;
+
+        img {
+            filter: grayscale(100%);
+        }
+
+        &.slider__1 {
+            transform: translate(25%, 0) scale(1) rotate(0.001deg);
+        }
+
+        &.slider__2 {
+            transform: translate(15%, 0) scale(1) rotate(0.001deg);
+        }
+    }
+}
+
+.bottom-shape-wrapper {
+    .footer-shape {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        height: 20vh;
+        transform: translateY(-1px);
+        will-change: height;
+        z-index: 1;
+
+        .layout {
+            width: 150%;
+            content: '';
+            display: block;
+            position: absolute;
+            background: var(--main-color);
+            height: 350%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, 0);
+            z-index: 20;
+
+            // @include mq(mq1) {
+            //     height: 750%;
+            // }
+            //
+            // @include mq(mq3) {
+            //     box-shadow: rgba(0, 0, 0, 0.8) 0px 61px 111px -3px;
+            // }
+        }
+    }
+}

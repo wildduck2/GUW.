@@ -132,12 +132,13 @@
         }
 
         &__img {
-            @include flex(block);
+            @include flex(flex, center);
             overflow: hidden;
 
             img {
                 scale: 1.5;
                 width: 625px;
+                // transform: 0px 20%;
             }
         }
     }

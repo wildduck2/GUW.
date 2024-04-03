@@ -50,7 +50,7 @@ export const initFontWeight = () => {
                 const itemPosition = char.getBoundingClientRect();
                 const itemWidth = char.offsetWidth;
                 const itemHeight = char.offsetHeight;
-                const itemCenterX = itemPosition.left + itemWidth / 2;
+                const itemCenterX = itemPosition.left + itemWidth / 2 + window.scrollX;
                 const itemCenterY = itemPosition.top + itemHeight / 2 + window.scrollY;
                 const distance = Math.sqrt(
                     Math.pow(mouseX - itemCenterX, 2) + Math.pow(mouseY - itemCenterY, 2)

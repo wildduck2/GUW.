@@ -70,8 +70,11 @@ export const credits_animation = () => {
     const tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: '.credits__section',
-            start: 'top 45%',
-            end: '110% 120%',
+            start: 'top 35%',
+            // end: '110% 120%',
+            end: '+=200px',
+            pin: '.credits__section',
+            pinType: 'transform',
             scrub: 1,
             toggleActions: 'play none none none'
             // markers: true
