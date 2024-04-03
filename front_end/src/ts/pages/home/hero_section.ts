@@ -11,8 +11,7 @@ export const hero_animation = () => {
                 start: '-10% top',
                 end: '180% bottom',
                 scrub: 1,
-                toggleActions: 'play none none none',
-                markers: true
+                toggleActions: 'play none none none'
             },
             defaults: {
                 ease: 'power1.out'
@@ -59,7 +58,7 @@ export const hero_animation = () => {
         tl.to(
             '.hero__section__left__img',
             {
-                yPercent: '-=10'
+                yPercent: '-=5'
             },
             '<'
         );
