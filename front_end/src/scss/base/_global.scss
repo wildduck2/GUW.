@@ -60,26 +60,27 @@ main {
     padding-top: 1rem;
 }
 
-// *::-webkit-scrollbar {
-//     width: 1.2rem;
-//     border-radius: 0.5rem;
-// }
+*::-webkit-scrollbar {
+    width: 1.2rem;
+    border-radius: 0.5rem;
+}
+
 //
-// *::-webkit-scrollbar-thumb {
-//     background-color: rgb(66, 66, 66);
-//     border-radius: 1rem;
-// }
-//
-// *::-webkit-scrollbar-track {
-//     background-color: var(--white-color);
-// }
-//
-// *::-webkit-scrollbar {
-//     position: absolute;
-//     width: 4px;
-//     height: 1px;
-// }
-//
-// *::-webkit-scrollbar-thumb:hover {
-//     background-color: var(--second-color);
-// }
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(66, 66, 66);
+    border-radius: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--white-color);
+}
+
+*::-webkit-scrollbar {
+    position: absolute;
+    width: 4px;
+    height: 1px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--second-color);
+}
