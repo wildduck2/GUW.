@@ -4,6 +4,9 @@ import { ScrollTrigger } from 'gsap/all';
 export const works_animation = () => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const el = document.querySelector('.works__section') as HTMLDivElement;
+
+    if (!el) return;
     gsap.context(() => {
         gsap.set('.works__section__title', {
             x: -50

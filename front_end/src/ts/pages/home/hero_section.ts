@@ -4,6 +4,9 @@ import { ScrollTrigger } from 'gsap/all';
 export const hero_animation = () => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const el = document.querySelector('.hero__section') as HTMLDivElement;
+
+    if (!el) return;
     gsap.context(() => {
         const tl = gsap.timeline({
             scrollTrigger: {

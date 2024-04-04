@@ -4,15 +4,18 @@ import SplitType from 'split-type';
 
 export const about_animation = () => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.context(() => {
-        // NOTE: spliting text
-        const aboutTitleWords = new SplitType('.about__section__title', {
-            types: 'lines,words'
-        }).words;
-        const aboutDiscWords = new SplitType('.about__section__text', {
-            types: 'lines,words'
-        }).words;
+    const el = document.querySelector('.about__section') as HTMLDivElement;
+    if (!el) return;
 
+    // NOTE: spliting text
+    const aboutTitleWords = new SplitType('.about__section__title', {
+        types: 'lines,words'
+    }).words;
+    const aboutDiscWords = new SplitType('.about__section__text', {
+        types: 'lines,words'
+    }).words;
+
+    gsap.context(() => {
         // NOTE: top elements
         const tl = gsap.timeline({
             scrollTrigger: {

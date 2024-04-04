@@ -65,14 +65,14 @@ export const home_loader_animation = () => {
 
     //NOTE: starting the animation
 
-    tl.to('.loader h2 .char', {
+    tl.to('.loader__h2', {
         y: 0,
         stagger: { amount: 0.4 },
         duration: 0.5
     });
 
     tl.to(
-        '.loader h2 .char',
+        '.loader__h2',
         {
             yPercent: -100,
             stagger: { amount: 0.4 },

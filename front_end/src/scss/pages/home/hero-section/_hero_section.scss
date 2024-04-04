@@ -28,10 +28,6 @@
 
             .line {
                 overflow: hidden;
-
-                .word {
-                    transform: translateY(100%) scale(1) rotate(0.001deg);
-                }
             }
 
             &__title {
@@ -59,6 +55,7 @@
             place-self: flex-end;
             padding-block: 0.5rem;
             gap: 2rem;
+            overflow: hidden;
 
             h2 {
                 font-size: 1.5rem;
@@ -72,7 +69,6 @@
 
             &>div:first-child {
                 @include flex(flex, center);
-                overflow: hidden;
                 gap: 2rem;
 
                 &>div {
@@ -82,11 +78,9 @@
 
                     &:first-child {
                         background: var(--third-color);
-                        transform: translateX(110%) scale(1) rotate(0.001deg);
                     }
 
                     &:last-child {
-                        transform: translateY(-110%) scale(1) rotate(0.001deg);
                         background: var(--forth-color);
                     }
                 }
@@ -96,8 +90,11 @@
                 @include hero_cards;
                 overflow: hidden;
                 @include flex(flex, center);
-                transform: translateY(110%) scale(1) rotate(0.001deg);
                 gap: 5.5rem;
+
+                img {
+                    margin-bottom: -7px;
+                }
 
                 &>div {
                     @include flex(grid, center);
@@ -134,6 +131,7 @@
         &__img {
             @include flex(flex, center);
             overflow: hidden;
+            height: 765px;
 
             img {
                 scale: 1.5;
