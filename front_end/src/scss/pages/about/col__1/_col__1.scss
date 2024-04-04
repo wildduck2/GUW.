@@ -1,0 +1,61 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    COL__1 SECTION 
+
+*/
+
+.about__col {
+    @include container;
+    @include section;
+    @include flex(flex, flex-start, space-between);
+    position: relative;
+    margin-block: 10rem;
+    gap: 4rem;
+
+    &>div {
+        @include flex(grid, flex-start);
+        text-align: start;
+        place-content: center;
+        gap: 1.5rem;
+
+        p {
+            font-size: 1.357rem;
+            font-weight: 400;
+            color: var(--second-color);
+            line-height: 44px;
+        }
+
+        h2 {
+            font-size: 3.75rem;
+            font-weight: 400;
+        }
+
+        span {
+            font-size: 1.357rem;
+            text-align: start;
+            color: var(--second-color);
+        }
+
+        button {
+            .btn-text {
+                color: var(--white-color);
+            }
+        }
+
+        &:nth-child(1) {}
+
+        &:nth-child(2) {
+            gap: 1.75rem;
+            max-width: 700px;
+            flex: 1;
+        }
+    }
+}

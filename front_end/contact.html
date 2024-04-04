@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- =========  IMPORT CSS FILE  ========== -->
+    <link rel="stylesheet" href="./src/scss/style.scss" />
+
+    <!-- =========  IMPORT FAVICON  ========== -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+
+    <!-- =========  IMPORT GOOGle FONTS  ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap"
+        rel="stylesheet" />
+
+    <title>GOLDEN UNITED WATERPOOFING</title>
+</head>
+
+<body data-barba="wrapper">
+    <!--NOTE: =========  LOADER  ==========  -->
+    <div class="loader__wrappper">
+        <div class="loader loader_first">
+            <div class="loading-words">
+                <h2 data-animate="font-weight" class="loader__h2 init">
+                    .NEDLOG <br />.DETINU <br />.GNIFOOPRETAW
+                </h2>
+                <h2 class="loader__h2 arabic">محفظة الأعمال</h2>
+                <h2 class="loader__h2 arabic">حولنا</h2>
+                <h2 class="loader__h2 arabic">الذين يثقون بنا</h2>
+                <h2 class="loader__h2 arabic active">اتصل بنا</h2>
+                <h2 class="loader__h2 arabic">الصفحة الرئيسية</h2>
+            </div>
+        </div>
+        <div class="loader loader_second"></div>
+    </div>
+
+    <!--NOTE: =========  MOUSE POSE  ========== -->
+    <div class="mouse-pos-list-image active">
+        <div class="mouse-pos-list-image-bounce">
+            <div class="float-image-wrap">
+                <li class="float-image-item">
+                    <div class="overlay-image"></div>
+                </li>
+                <li class="float-image-item">
+                    <div class="overlay-image"></div>
+                </li>
+                <li class="float-image-item">
+                    <div class="overlay-image"></div>
+                </li>
+                <li class="float-image-item">
+                    <div class="overlay-image"></div>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="mouse-pos-list-btn no-select"></div>
+    <div class="mouse-pos-list-span no-select">
+        <p>أعرض</p>
+    </div>
+
+    <div data-barba="container" data-barba-namespace="works">
+        <!--NOTE: =========  HEADER  ========== -->
+        <header class="header">
+            <nav class="header__nav">
+                <a class="header__nav__logo magnetic" href="/index.html">
+                    <img src="/src/assets/imgs/logo.png" alt="logo" class="magnetic" data-strength="20"
+                        data-strength-text="10" />
+                </a>
+
+                <div class="header__nav__container">
+                    <ul class="header__nav__container__menu">
+                        <li>
+                            <a class="btn-text magnetic" href="/credits.html" data-strength="20"
+                                data-strength-text="10">
+                                <span> الاعتمادات </span>
+                                <div class="dot btn-text-m"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-text magnetic" href="/about.html" data-strength="20" data-strength-text="10">
+                                <span>حولنا</span>
+                                <div class="dot btn-text-m"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-text magnetic" href="/works.html" data-strength="20" data-strength-text="10">
+                                <span>محفظة الأعمال</span>
+                                <div class="dot btn-text-m"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-text magnetic" href="/contact.html" data-strength="20"
+                                data-strength-text="10">
+                                <span> اتصل بنا</span>
+                                <div class="dot btn-text-m dot__active"></div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="header__nav__container__btn magnetic" data-strength="20" data-strength-text="10">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- =========  MAIN   ========== -->
+
+        <main>
+            <section class="page__hero__section">
+                <picture class="once-in-view">
+                    <img src="/src/assets/imgs/contact_hero.png" alt="" />
+                </picture>
+                <h1 class="once-in-title">تواصل معنا الآن: نحن هنا للاستماع والمساعدة.</h1>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="/src/ts/main.ts"></script>
+</body>
+
+</html>

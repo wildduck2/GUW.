@@ -3,6 +3,9 @@ import { ScrollTrigger } from 'gsap/all';
 
 export const footer__section = () => {
     gsap.registerPlugin(ScrollTrigger);
+    const el = document.querySelector('.footer__section') as HTMLDivElement;
+
+    if (!el) return;
 
     gsap.context(() => {
         gsap.set('.footer__section__col1 h2', {
@@ -30,7 +33,7 @@ export const footer__section = () => {
             scrollTrigger: {
                 trigger: '.footer__section',
                 start: '0% 100%',
-                end: '90% bottom',
+                end: '98% bottom',
                 scrub: 1
             },
             defaults: {

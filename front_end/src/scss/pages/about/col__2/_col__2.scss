@@ -1,0 +1,39 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    COL__2 SECTION 
+
+*/
+
+.col__2 {
+    @include container;
+    @include flex(flex, flex-start, space-between);
+    margin-block: 10rem;
+
+    &>div:nth-child(2) {
+        place-content: initial;
+    }
+
+    .our__team {
+        @include flex(grid, center, space-between);
+        grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+        gap: 1.5rem;
+
+        img {
+            @include border;
+            filter: grayscale(90%);
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 20px;
+        }
+    }
+}

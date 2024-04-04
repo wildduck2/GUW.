@@ -1,78 +1,26 @@
+import { ITransitionData } from '@barba/core';
 import { gsap } from 'gsap/gsap-core';
 import SplitType from 'split-type';
+import { initHomePage, initHomePageAnimations } from './home_animations';
 
-export const home_loader_animation = () => {
-    //NOTE: spliting text
-    new SplitType('.hero__section__right__top__title', {
-        types: 'lines,words'
-    }).words;
-
-    new SplitType('.hero__section__right__top__text', {
-        types: 'lines,words'
-    }).words;
-
-    //NOTE: settin init values
+export const initPageOnce = () => {
     const tl = gsap.timeline({});
+};
 
-    tl.set('html', {
-        // overflow: 'hidden'
-        onStart: () => {
-            window.scrollTo(0, 0);
-        }
-    });
-
-    tl.set('.header', {
-        yPercent: -20
-    });
-
-    tl.set(
-        '.hero__card__img',
-        {
-            yPercent: 120
-        },
-        '>'
-    );
-
-    tl.set('.hero__section__left__svg', {
-        opacity: 0,
-        scale: 0.5
-    });
-
-    tl.set('.hero__section__left__img', {
-        height: 0
-    });
-
-    tl.set('.hero__section__right__top', {
-        overflow: 'hidden'
-    });
-
-    tl.set('.hero__section__right__bottom', {
-        overflow: 'hidden'
-    });
-
-    tl.set('.hero__section__right__top__btn', {
-        yPercent: 101,
-        pointerEvents: 'none'
-    });
-
-    tl.set('.once-in', {
-        yPercent: -20
-    });
-
-    tl.set('.loader', {
-        cursor: 'crosshair'
-    });
+export const initLoaderHome = () => {
+    const tl = gsap.timeline({});
+    initHomePage();
 
     //NOTE: starting the animation
 
-    tl.to('.loader__h2', {
+    tl.to('.loader__h2.active .char', {
         y: 0,
         stagger: { amount: 0.4 },
         duration: 0.5
     });
 
     tl.to(
-        '.loader__h2',
+        '.loader__h2.active .char',
         {
             yPercent: -100,
             stagger: { amount: 0.4 },
@@ -93,127 +41,144 @@ export const home_loader_animation = () => {
         '<.5'
     );
 
+    initHomePageAnimations(tl);
+};
+
+export const initPageLeave = () => {
+    const tl = gsap.timeline();
+
+    tl.set('.loader', {
+        yPercent: 100
+    });
+
+    tl.to('.loader_second', {
+        yPercent: 0,
+        duration: 0.8,
+        ease: 'Power4.easeInOut'
+    });
+
     tl.to(
-        'header',
+        '.loader_first',
         {
             yPercent: 0,
             duration: 0.8,
             ease: 'Power4.easeInOut',
             delay: 0.2
         },
-        '<.4'
-    );
-
-    tl.to(
-        '.once-in',
-        {
-            yPercent: 0,
-            stagger: 0.4,
-            duration: 0.8,
-            ease: 'Power3.easeInOut'
-        },
-        '-=1.2'
-    );
-
-    tl.to(
-        '.hero__section__right__top__title .word',
-        {
-            y: 0,
-            stagger: { amount: 0.4 },
-            duration: 0.8,
-            ease: 'Power1.easeInOut'
-        },
         '-=.7'
     );
-
-    tl.to(
-        '.hero__section__right__top__text .word',
-        {
-            y: 0,
-            stagger: { amount: 0.4 },
-            duration: 0.8,
-            ease: 'Power1.easeInOut'
-        },
-        '-=.7'
-    );
-
-    tl.to(
-        '.hero__section__right__top__btn',
-        {
-            yPercent: 0,
-            stagger: 0.4,
-            duration: 0.8,
-            ease: 'Power1.easeInOut'
-        },
-        '-=.8'
-    );
-
-    tl.to(
-        '.once-in-t',
-        {
-            x: 0,
-            y: 0,
-            stagger: { amount: 0.4 },
-            duration: 0.8,
-            ease: 'Power3.easeInOut'
-        },
-        '-=1.2'
-    );
-
-    tl.to(
-        '.hero__section__left__img',
-        {
-            height: '765',
-            duration: 0.8,
-            ease: 'Power4.easeInOut'
-        },
-        '-=0.6'
-    );
-
-    tl.fromTo(
-        '.once-in-i',
-        {
-            yPercent: 35,
-            opacity: 0
-        },
-        {
-            yPercent: 0,
-            opacity: 1,
-            stagger: { amount: 0.4 },
-            duration: 0.8,
-            ease: 'Power4.easeInOut'
-        },
-        '-=.8'
-    );
-
-    tl.to(
-        '.hero__card__img',
-        {
-            yPercent: 0
-        },
-        '-=0.8'
-    );
-
-    tl.to(
-        '.hero__section__left__svg',
-        {
-            opacity: 1,
-            scale: 1
-        },
-        '-=0.8'
-    );
-
-    //NOTE: reseting init valuse again
-
-    tl.set('.hero__section__right__top__btn', {
-        pointerEvents: 'all'
-    });
-
-    tl.set('.hero__section__right__top', {
-        overflow: 'initial'
-    });
-
-    tl.set('html', {
-        overflowY: 'initial'
-    });
 };
+export const initPageEnter = () => {
+    const tl = gsap.timeline();
+    new SplitType('.arabic', { types: 'lines,words' });
+    console.log(window.location.pathname);
+
+    tl.set('.loader__h2.init', {
+        opacity: 0,
+        pointerEvents: 'none'
+    });
+
+    tl.set('.loader__h2.arabic.active', {
+        opacity: 1,
+        pointerEvents: 'none'
+    });
+
+    tl.to(
+        '.loader__h2.active .word',
+        {
+            y: 0,
+            duration: 0.8,
+            stagger: { amount: 0.4 },
+            ease: 'Power1.easeInOut'
+        },
+        '+=.2'
+    );
+
+    tl.to(
+        '.loader__h2.active .word',
+        {
+            yPercent: -100,
+            duration: 0.8,
+            stagger: { amount: 0.4 },
+            ease: 'Power1.easeInOut'
+        },
+        '+=.2'
+    );
+
+    tl.to(
+        '.loader',
+        {
+            yPercent: -100,
+            stagger: 0.4,
+            duration: 0.8,
+            ease: 'Power4.easeInOut',
+            delay: 0.2
+        },
+        '-=0.5'
+    );
+
+    if (window.location.pathname === '/index.html') {
+        initHomePage();
+        initHomePageAnimations(tl);
+    } else {
+        initPageAnimations(tl);
+    }
+};
+
+export const initPageAnimations = (tl: gsap.core.Timeline) => {
+    //NOTE: spliting headers
+    new SplitType('.once-in-title', { types: 'lines,words' });
+
+    //NOTE: setting values
+    gsap.set('.once-in-view img', {
+        width: 400,
+        transformOrigin: 'center'
+    });
+
+    gsap.set('.once-in-title .line', {
+        overflow: 'hidden'
+    });
+
+    gsap.set('.once-in-title .word', {
+        yPercent: 120
+    });
+
+    tl.to(
+        '.once-in-view img',
+        {
+            width: '100%',
+            duration: 0.8,
+            ease: 'Power4.easeInOut',
+            delay: 0.2
+        },
+        '-=.9'
+    );
+
+    tl.to(
+        '.once-in-title .word',
+        {
+            yPercent: 0,
+            stagger: { amount: 0.4 },
+            duration: 0.8,
+            ease: 'Power1.easeInOut'
+        },
+        '<.2'
+    );
+};
+
+export function initNextWord(data: ITransitionData) {
+    // update Text Loading https://github.com/barbajs/barba/issues/507
+    const parser = new DOMParser();
+    const dom = parser.parseFromString(data.next.html, 'text/html');
+    const nextProjects = dom.querySelector('.loading-words');
+    document.querySelector('.loading-words')!.innerHTML = nextProjects!.innerHTML;
+}
+
+export function delay(n: number) {
+    n = n || 2000;
+    return new Promise<void>((done) => {
+        setTimeout(() => {
+            done();
+        }, n);
+    });
+}

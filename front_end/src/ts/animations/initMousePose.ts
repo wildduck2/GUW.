@@ -16,6 +16,7 @@ export function initMousePose() {
     const mousePosListBtnBounce = document.querySelector('.mouse-pos-list-image-bounce');
     const projectList = document.querySelector('.projects-wrapper') as HTMLUListElement;
 
+    if (!floatProjectContainerItem) return;
     if (!floatProjectContainer && !cursorImage) return;
 
     const cursorImggeDir = {
@@ -86,6 +87,7 @@ export function initMousePose() {
         );
     });
 
+    if (!floatProjectContainerItem) return;
     // float image indexing
     floatProjectContainerItem.forEach((item, index) => {
         item.addEventListener('mouseenter', () => {

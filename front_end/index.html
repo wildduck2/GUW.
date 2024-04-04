@@ -22,11 +22,20 @@
     <title>GOLDEN UNITED WATERPOOFING</title>
 </head>
 
-<body>
+<body data-barba="wrapper">
     <!--NOTE: =========  LOADER  ==========  -->
     <div class="loader__wrappper">
-        <div class="loader">
-            <h2 data-animate="font-weight">.NEDLOG <br />.DETINU <br />.GNIFOOPRETAW</h2>
+        <div class="loader loader_first">
+            <div class="loading-words">
+                <h2 data-animate="font-weight" class="loader__h2 active init">
+                    .NEDLOG <br />.DETINU <br />.GNIFOOPRETAW
+                </h2>
+                <h2 class="loader__h2 arabic">محفظة الأعمال</h2>
+                <h2 class="loader__h2 arabic">حولنا</h2>
+                <h2 class="loader__h2 arabic">الذين يثقون بنا</h2>
+                <h2 class="loader__h2 arabic">اتصل بنا</h2>
+                <h2 class="loader__h2 arabic active">الصفحة الرئيسية</h2>
+            </div>
         </div>
         <div class="loader loader_second"></div>
     </div>
@@ -55,7 +64,7 @@
         <p>أعرض</p>
     </div>
 
-    <div class="" data-scroll-container>
+    <div data-barba="container" data-barba-namespace="home">
         <!--NOTE: =========  HEADER  ========== -->
         <header class="header">
             <nav class="header__nav">
@@ -124,7 +133,7 @@
                     </div>
                     <div class="hero__section__right__bottom">
                         <div>
-                            <div class="once-in-t">
+                            <div class="once-in-t hero__card__1">
                                 <h2 class="once-in-i">40 فأكثر</h2>
                                 <p class="once-in-i">
                                     سنوات من التميز: قيادة الصناعة في عزل الماء وإصلاح الخرسانة مع شركة الاتحاد
@@ -132,7 +141,7 @@
                                 </p>
                             </div>
 
-                            <div class="once-in-t">
+                            <div class="once-in-t hero__card__2">
                                 <h2 class="once-in-i">أكثر من 1,000</h2>
                                 <p class="once-in-i">
                                     تراث من المشاريع الناجحة والمتميزة والواسعة مع شركة الاتحاد الذهبي للمقاولات.
@@ -140,7 +149,7 @@
                             </div>
                         </div>
 
-                        <div class="once-in-t">
+                        <div class="once-in-t hero__card__3">
                             <div>
                                 <h2 class="once-in-i">الخبرة الهيكلية</h2>
                                 <p class="once-in-i">
@@ -643,69 +652,66 @@
                 </div>
             </section>
             <!--NOTE: =========  FOOTER SECTION  ==========  -->
-
-            <footer class="footer__section">
-                <div class="footer__section__col1">
-                    <h2>لنعمل معًا.</h2>
-                </div>
-                <div class="footer__section__col2">
-                    <div class="stripe"></div>
-                    <img src="/src/assets/svg/arrow.png" alt="" />
-
-                    <button type="button" class="btn-radius footer__btn magnetic" data-strength="50"
-                        data-strength-text="15">
-                        <div class="btn-fill"></div>
-                        <div class="btn-text btn-text-m">ابدأ</div>
-                    </button>
-                </div>
-
-                <div class="footer__section__col3">
-                    <button type=" button" class="btn-solid-horizon footer__btn magnetic" data-strength="50"
-                        data-strength-text="15">
-                        <div class="btn-fill"></div>
-                        <div class="btn-text btn-text-m">gucw111@gmail.com</div>
-                    </button>
-                    <button type="button" class="btn-solid-horizon footer__btn magnetic" data-strength="50"
-                        data-strength-text="15">
-                        <div class="btn-fill"></div>
-                        <div class="btn-text btn-text-m">93299994 50+</div>
-                    </button>
-                    <div class="stripe"></div>
-                </div>
-
-                <div class="footer__section__col4">
-                    <p>© تصميم وتطوير من قبل Ahmed Ayob | سياسة الخصوصية | إشعارات قانونية</p>
-                    <ul class="header__nav__container__menu">
-                        <li>
-                            <a class="btn-text magnetic" href="/credits.html" data-strength="20"
-                                data-strength-text="10">
-                                <span> الاعتمادات </span>
-                                <div class="dot btn-text-m"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="btn-text magnetic" href="/about.html" data-strength="20" data-strength-text="10">
-                                <span>حولنا</span>
-                                <div class="dot btn-text-m"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="btn-text magnetic" href="/works.html" data-strength="20" data-strength-text="10">
-                                <span>محفظة الأعمال</span>
-                                <div class="dot btn-text-m"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="btn-text magnetic" href="/contact.html" data-strength="20"
-                                data-strength-text="10">
-                                <span>بنا</span>
-                                <div class="dot btn-text-m"></div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
         </main>
+        <footer class="footer__section">
+            <div class="footer__section__col1">
+                <h2>لنعمل معًا.</h2>
+            </div>
+            <div class="footer__section__col2">
+                <div class="stripe"></div>
+                <img src="/src/assets/svg/arrow.png" alt="" />
+
+                <button type="button" class="btn-radius footer__btn magnetic" data-strength="50"
+                    data-strength-text="15">
+                    <div class="btn-fill"></div>
+                    <div class="btn-text btn-text-m">ابدأ</div>
+                </button>
+            </div>
+
+            <div class="footer__section__col3">
+                <button type=" button" class="btn-solid-horizon footer__btn magnetic" data-strength="50"
+                    data-strength-text="15">
+                    <div class="btn-fill"></div>
+                    <div class="btn-text btn-text-m">gucw111@gmail.com</div>
+                </button>
+                <button type="button" class="btn-solid-horizon footer__btn magnetic" data-strength="50"
+                    data-strength-text="15">
+                    <div class="btn-fill"></div>
+                    <div class="btn-text btn-text-m">93299994 50+</div>
+                </button>
+                <div class="stripe"></div>
+            </div>
+
+            <div class="footer__section__col4">
+                <p>© تصميم وتطوير من قبل Ahmed Ayob | سياسة الخصوصية | إشعارات قانونية</p>
+                <ul class="header__nav__container__menu">
+                    <li>
+                        <a class="btn-text magnetic" href="/credits.html" data-strength="20" data-strength-text="10">
+                            <span> الاعتمادات </span>
+                            <div class="dot btn-text-m"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn-text magnetic" href="/about.html" data-strength="20" data-strength-text="10">
+                            <span>حولنا</span>
+                            <div class="dot btn-text-m"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn-text magnetic" href="/works.html" data-strength="20" data-strength-text="10">
+                            <span>محفظة الأعمال</span>
+                            <div class="dot btn-text-m"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn-text magnetic" href="/contact.html" data-strength="20" data-strength-text="10">
+                            <span>بنا</span>
+                            <div class="dot btn-text-m"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
     </div>
 
     <script type="module" src="/src/ts/main.ts"></script>

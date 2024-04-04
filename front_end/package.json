@@ -20,7 +20,6 @@
         "@barba/core": "^2.9.7",
         "@studio-freight/lenis": "^1.0.42",
         "gsap": "^3.12.5",
-        "locomotive-scroll": "^4.1.4",
         "sass": "^1.72.0",
         "split-type": "^0.3.4"
     }

@@ -1,0 +1,46 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    HERO SECTION 
+
+*/
+
+.page__hero__section {
+    @include container;
+    @include section;
+    position: relative;
+
+    &>picture {
+        @include flex(grid);
+        place-content: center;
+        border-radius: 23px;
+        overflow: hidden;
+
+        img {
+            scale: 1;
+            filter: grayscale(80%);
+            width: 100%;
+            height: 570px;
+            margin-inline: auto;
+            object-fit: cover;
+        }
+    }
+
+    &>h1 {
+        @include split_heading(4.5rem);
+        line-height: 1.4;
+        font-weight: 300;
+        position: absolute;
+        top: 7vw;
+        right: 7vw;
+        max-width: 900px;
+        text-align: right;
+    }
+}
