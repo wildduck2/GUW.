@@ -2,10 +2,52 @@ import { ITransitionData } from '@barba/core';
 import { gsap } from 'gsap/gsap-core';
 import SplitType from 'split-type';
 import { initHomePage, initHomePageAnimations } from './home_animations';
-import { col_1 } from '../pages';
 
 export const initPageOnce = () => {
     const tl = gsap.timeline({});
+
+    new SplitType('.arabic', { types: 'lines,words' });
+
+    tl.to('.loader__h2 .word', {
+        y: 150
+    });
+
+    tl.set('.loader__h2.arabic.active', {
+        opacity: 1,
+        pointerEvents: 'none'
+    });
+
+    tl.to('.loader__h2.active .word', {
+        y: 0,
+        duration: 0.8,
+        stagger: { amount: 0.4 },
+        ease: 'Power1.easeInOut'
+    });
+
+    tl.to(
+        '.loader__h2.active .word',
+        {
+            yPercent: -100,
+            duration: 0.8,
+            stagger: { amount: 0.4 },
+            ease: 'Power1.easeInOut'
+        },
+        '+=.2'
+    );
+
+    tl.to(
+        '.loader',
+        {
+            yPercent: -100,
+            stagger: 0.4,
+            duration: 0.8,
+            ease: 'Power4.easeInOut',
+            delay: 0.2
+        },
+        '-=0.5'
+    );
+
+    initPageAnimations(tl);
 };
 
 export const initLoaderHome = () => {

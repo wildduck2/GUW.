@@ -1,5 +1,12 @@
 import barba from '@barba/core';
-import { delay, initLoaderHome, initNextWord, initPageEnter, initPageLeave } from './initLoading';
+import {
+    delay,
+    initLoaderHome,
+    initNextWord,
+    initPageEnter,
+    initPageLeave,
+    initPageOnce
+} from './initLoading';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Lenis from '@studio-freight/lenis';
@@ -67,7 +74,9 @@ export const initBarbaAnimation = () => {
         transitions: [
             {
                 name: 'works',
-                async once() { },
+                async once() {
+                    initPageOnce();
+                },
                 async leave({ current }) {
                     // NOTE: animate loading screen in
                     initPageLeave();
