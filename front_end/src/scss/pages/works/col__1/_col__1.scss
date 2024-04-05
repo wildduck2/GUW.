@@ -1,0 +1,177 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    COL__1 SECTION 
+
+*/
+
+.col__1.works_section {
+    @include container;
+    @include section;
+    @include flex(grid, flex-start);
+    position: relative;
+    margin-block: 10rem;
+    gap: 7rem;
+
+    h2 {
+        font-size: 3.75rem;
+        font-weight: 400;
+    }
+
+    span {
+        font-size: 1.357rem;
+        text-align: start;
+        color: var(--second-color);
+    }
+
+    .col__1__btn__wrapper {
+        @include flex(flex, flex-start, center);
+
+        button {
+            background: var(--white-color);
+            color: var(--main-color);
+        }
+    }
+
+    .projects-wrapper {
+        @include flex(grid, center);
+
+        &.menu {
+            & picture {
+                display: none;
+            }
+
+            & .propject-table-line {
+                @include flex(flex, center, space-between);
+                margin-bottom: 2.275rem;
+                font-weight: weight('w-450');
+                text-transform: capitalize;
+                cursor: pointer;
+                text-align: center;
+                color: var(--color-gray);
+
+                h5 {
+                    font-size: 0.8em;
+                    text-align: start;
+
+                    &:nth-child(1) {
+                        width: 35%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 29%;
+                    }
+
+                    &:nth-child(3) {
+                        width: 22%;
+                    }
+
+                    &:nth-child(4) {
+                        width: 8%;
+                        padding-top: 0.25em;
+                        text-align: right;
+                    }
+                }
+            }
+
+            .float-project-container {
+                .project {
+                    scale: 0;
+                    height: 0;
+                    transition: var(--animation-fast);
+
+                    &.show {
+                        scale: 1;
+                        height: 138.86px;
+                    }
+
+                    &>.stripe {
+                        display: block;
+                        width: 143%;
+                        max-width: 1600px;
+                        height: 1px;
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        margin-inline: auto;
+                        background-color: rgba(28, 29, 32, 0.175);
+                    }
+
+                    .row {
+                        @include flex(flex, center, space-between);
+                        padding-block: 2em;
+
+                        .flex-col>p,
+                        h4 {
+                            font-size: 1em;
+                            color: var(--main-color);
+                            margin-bottom: 0;
+                            transform: translateX(0) rotate(0.001deg);
+                            transition: var(--animation-fast);
+                        }
+
+                        h4 {
+                            font-size: calc(clamp(3.25em, 7vw, 5.5em) * 0.75);
+                            font-weight: 300;
+                        }
+
+                        & .flex-col {
+                            transition: var(--animation-fast);
+
+                            &:nth-child(2) {
+                                width: 35%;
+                            }
+
+                            &:nth-child(3) {
+                                width: 28%;
+                            }
+
+                            &:nth-child(4) {
+                                width: 22%;
+                            }
+
+                            &:nth-child(5) {
+                                width: 6%;
+                                padding-top: 0.25em;
+                                text-align: right;
+                            }
+                        }
+
+                        &:hover .flex-col {
+
+                            h4,
+                            p {
+                                color: var(--gray-color);
+                            }
+
+                            &:nth-child(2) {
+                                transform: translateX(calc(var(--container-padding) * -0.1)) rotate(0.001deg);
+                            }
+
+                            &:nth-child(3),
+                            &:nth-child(4),
+                            &:nth-child(5) {
+                                transform: translateX(calc(var(--container-padding) * 0.1)) rotate(0.001deg);
+                            }
+                        }
+                    }
+
+                    svg {
+                        display: none;
+                    }
+
+                    .card__img-filtered {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

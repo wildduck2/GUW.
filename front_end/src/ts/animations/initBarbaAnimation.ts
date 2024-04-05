@@ -75,7 +75,7 @@ export const initBarbaAnimation = () => {
             {
                 name: 'works',
                 async once() {
-                    initPageOnce();
+                    // initPageOnce();
                 },
                 async leave({ current }) {
                     // NOTE: animate loading screen in
