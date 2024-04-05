@@ -17,8 +17,12 @@
     @include flex(flex, flex-start, space-between);
     margin-block: 10rem;
 
-    &>div:nth-child(2) {
+    & div:nth-child(2) {
         place-content: initial;
+    }
+
+    .col__2__pin {
+        overflow: hidden !important;
     }
 
     .our__team {

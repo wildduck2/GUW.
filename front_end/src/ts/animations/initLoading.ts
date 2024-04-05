@@ -2,6 +2,7 @@ import { ITransitionData } from '@barba/core';
 import { gsap } from 'gsap/gsap-core';
 import SplitType from 'split-type';
 import { initHomePage, initHomePageAnimations } from './home_animations';
+import { col_1 } from '../pages';
 
 export const initPageOnce = () => {
     const tl = gsap.timeline({});
@@ -122,6 +123,10 @@ export const initPageEnter = () => {
         initHomePageAnimations(tl);
     } else {
         initPageAnimations(tl);
+        //
+        // if (window.location.pathname === './about.html') {
+        //     col_1();
+        // }
     }
 };
 
@@ -131,7 +136,7 @@ export const initPageAnimations = (tl: gsap.core.Timeline) => {
 
     //NOTE: setting values
     gsap.set('.once-in-view img', {
-        width: 400,
+        scale: 1.8,
         transformOrigin: 'center'
     });
 
@@ -146,7 +151,7 @@ export const initPageAnimations = (tl: gsap.core.Timeline) => {
     tl.to(
         '.once-in-view img',
         {
-            width: '100%',
+            scale: 1.4,
             duration: 0.8,
             ease: 'Power4.easeInOut',
             delay: 0.2

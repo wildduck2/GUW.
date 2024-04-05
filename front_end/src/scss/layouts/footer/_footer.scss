@@ -87,23 +87,30 @@
 }
 
 .bottom-shape-wrapper {
+    position: absolute;
+    bottom: 4rem;
+    // width: 100%;
+    max-width: initial !important;
+
     .footer-shape {
         width: 100%;
         bottom: 0;
         position: absolute;
+        left: 50%;
+
         height: 20vh;
-        transform: translateY(-1px);
+        transform: translateY(-1px) translateX(-50%);
         will-change: height;
         z-index: 1;
 
         .layout {
-            width: 150%;
             content: '';
             display: block;
             position: absolute;
             background: var(--main-color);
+            width: 150%;
             height: 350%;
-            left: 75%;
+            left: 50.97%;
             border-radius: 50%;
             transform: translate(-50%, 0);
             z-index: 20;

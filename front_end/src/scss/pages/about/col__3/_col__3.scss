@@ -13,17 +13,16 @@
 */
 
 .col__3 {
-    @include flex(grid, center, center);
     background: var(--main-color);
     max-width: initial;
     padding-block: 10rem;
     height: 130vh;
+    position: relative;
 
     &>div {
         @include flex(flex, flex-start, space-between);
         @include container;
         width: 100%;
-        max-width: initial;
         margin-block: auto;
 
         &>div {
@@ -76,7 +75,7 @@
 
                     &.active {
                         svg {
-                            rotate: 45deg;
+                            rotate: 45deg !important;
                         }
 
                         p {
@@ -87,12 +86,15 @@
                 }
             }
 
-            *:not(span) {
+            h3,
+            h2,
+            svg {
                 color: var(--white-color);
                 fill: var(--white-color);
             }
 
-            span {
+            span,
+            p {
                 color: #9c9d9f;
             }
         }

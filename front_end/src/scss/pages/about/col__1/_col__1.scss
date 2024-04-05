@@ -52,7 +52,7 @@
 
         &:nth-child(1) {}
 
-        &:nth-child(2) {
+        &:nth-child(2):not(.bottom-shape-wrapper) {
             gap: 1.75rem;
             max-width: 700px;
             flex: 1;
