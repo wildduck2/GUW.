@@ -40,15 +40,6 @@ export const initBarbaAnimation = () => {
     // NOTE: do something after the transition finishes
     barba.hooks.after(() => {
         document.querySelector('html')!.classList.remove('is-transitioning');
-
-        // reinit Lenis scroll
-        lenis.start();
-        lenis.stop();
-    });
-
-    //NOTE: scroll to the top of the page
-    barba.hooks.enter(() => {
-        lenis.destroy();
     });
 
     //NOTE: scroll to the top of the page
@@ -75,7 +66,7 @@ export const initBarbaAnimation = () => {
             {
                 name: 'works',
                 async once() {
-                    // initPageOnce();
+                    initPageOnce();
                 },
                 async leave({ current }) {
                     // NOTE: animate loading screen in

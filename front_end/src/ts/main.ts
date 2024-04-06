@@ -18,7 +18,7 @@ import {
     col_2,
     col_3
 } from './pages';
-import { footer__section, menu_functionality } from './layouts';
+import { footer__section, menu_functionality, text__section } from './layouts';
 
 export const initALLScripts = () => {
     initFontWeight();
@@ -33,7 +33,6 @@ export const initALLScripts = () => {
     values_animation();
     credits_animation();
     slider_section();
-    footer__section();
 
     //INFO: ABOUT
     accordion();
@@ -43,6 +42,8 @@ export const initALLScripts = () => {
 
     //INFO: OTHER PAGES
     other_pages();
+    text__section();
+    footer__section();
 };
 
 initALLScripts();

@@ -129,3 +129,32 @@
         }
     }
 }
+
+@mixin text__section {
+    @include container;
+    @include section;
+    @include flex(grid, flex-start);
+    background: var(--main-color);
+    position: relative;
+    margin-block: 10rem;
+    padding-block: 14rem;
+    width: 100%;
+    height: 130vh;
+    gap: 7rem;
+    max-width: initial;
+
+    h2 {
+        position: absolute;
+        inset: 25vw 11vw 0 0;
+        font-size: 4.75rem;
+        font-weight: 200;
+        color: var(--white-color);
+    }
+
+    .bottom-shape-wrapper {
+        width: 100%;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

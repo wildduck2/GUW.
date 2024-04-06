@@ -32,8 +32,8 @@ export const footer__section = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.footer__section',
-                start: '0% 100%',
-                end: '98% bottom',
+                start: 'clamp(top bottom)',
+                end: 'clamp(98% bottom)',
                 scrub: 1
             },
             defaults: {
