@@ -1,19 +1,19 @@
-import gsap from 'gsap';
+import gsap from 'gsap'
 
 export const initMagnetic = () => {
-    const domElemetns = document.querySelectorAll('.magnetic') as NodeListOf<HTMLElement>;
+    const domElemetns = document.querySelectorAll('.magnetic') as NodeListOf<HTMLElement>
 
     let boundingClientRect: DOMRect,
         domElementText: Element | null,
         domElementFill: Element | null,
         magnetsStrength: string | null,
-        magnetsStrengthText: string | null;
+        magnetsStrengthText: string | null
 
     const buttonMovement = (Element: HTMLElement, event: MouseEvent) => {
-        domElementText = Element.querySelector('.btn-text-m');
-        boundingClientRect = Element.getBoundingClientRect();
-        magnetsStrength = Element.getAttribute('data-strength') as string;
-        magnetsStrengthText = Element.getAttribute('data-strength-text') as string;
+        domElementText = Element.querySelector('.btn-text-m')
+        boundingClientRect = Element.getBoundingClientRect()
+        magnetsStrength = Element.getAttribute('data-strength') as string
+        magnetsStrengthText = Element.getAttribute('data-strength-text') as string
 
         // setting context scope to prevent buggs in animation on larger screens
         const ctx1 = gsap.context(() => {
@@ -28,7 +28,7 @@ export const initMagnetic = () => {
                     rotate: '0.001deg',
                     duration: 1.5,
                     ease: 'power4.out'
-                });
+                })
 
                 if (domElementText) {
                     gsap.to(domElementText, {
@@ -40,19 +40,19 @@ export const initMagnetic = () => {
                             +magnetsStrengthText!,
                         duration: 1.5,
                         ease: 'power4.out'
-                    });
+                    })
                 }
             }
-        });
-        return () => ctx1.revert();
-    };
+        })
+        return () => ctx1.revert()
+    }
 
     // mouseEnter handler animation
     domElemetns.forEach((Element: HTMLElement) => {
         Element.addEventListener('mouseenter', (event: MouseEvent | any) => {
-            domElementFill = Element.querySelector('.btn-fill');
-            buttonMovement(Element, event);
-            const chngeFilterText = Element.querySelector('.change');
+            domElementFill = Element.querySelector('.btn-fill')
+            buttonMovement(Element, event)
+            const chngeFilterText = Element.querySelectorAll('.change, .change > span')
 
             const ctx2 = gsap.context(() => {
                 // if there is a fill layer do else not
@@ -62,7 +62,7 @@ export const initMagnetic = () => {
                             startAt: { y: '76%' },
                             y: '0%',
                             ease: 'power2.inOut'
-                        });
+                        })
                     }
                 }
                 // anomation for the works button
@@ -72,36 +72,36 @@ export const initMagnetic = () => {
                             startAt: { color: '#1C1D20' },
                             color: '#FFFFFF',
                             ease: 'power3.inOut'
-                        });
+                        })
                     }
                 }
 
-                if (chngeFilterText) {
+                if (chngeFilterText.length) {
                     gsap.to(chngeFilterText, {
                         startAt: { color: '#1C1D20', stroke: '#1C1D20' },
                         color: '#FFFFFF',
                         stroke: '#FFFFFF',
                         duration: 0.3,
                         ease: 'power2.in'
-                    });
+                    })
                 }
-            });
-            return () => ctx2.revert();
-        });
-    });
+            })
+            return () => ctx2.revert()
+        })
+    })
 
     domElemetns.forEach((Element: HTMLElement) => {
         Element.addEventListener('mousemove', (event: MouseEvent) => {
-            buttonMovement(Element, event);
-        });
-    });
+            buttonMovement(Element, event)
+        })
+    })
 
     domElemetns.forEach((Element: HTMLElement) => {
         Element.addEventListener('mouseleave', () => {
-            domElementText = Element.querySelector('.btn-text-m');
-            const magnetButtonfill = Element.querySelector('.btn-fill');
-            const btnC = Element.querySelector('.btn-c');
-            const chngeFilterText = Element.querySelector('.change');
+            domElementText = Element.querySelector('.btn-text-m')
+            const magnetButtonfill = Element.querySelector('.btn-fill')
+            const btnC = Element.querySelector('.btn-c')
+            const chngeFilterText = Element.querySelectorAll('.change, .change > span')
 
             // restring all tweens on mouseLeave
             const ctx3 = gsap.context(() => {
@@ -109,22 +109,22 @@ export const initMagnetic = () => {
                     x: 0,
                     y: 0,
                     ease: 'elastic.out'
-                });
+                })
 
                 if (domElementText) {
                     gsap.to(domElementText, 1.5, {
                         x: 0,
                         y: 0,
                         ease: 'elastic.out'
-                    });
-                    if (chngeFilterText) {
+                    })
+                    if (chngeFilterText.length) {
                         gsap.to(chngeFilterText, {
                             color: '#1C1D20',
                             stroke: '#1C1D20',
                             ease: 'power3.inOut',
                             duration: 0.3,
                             delay: 0.3
-                        });
+                        })
                     }
                 }
 
@@ -132,7 +132,7 @@ export const initMagnetic = () => {
                     gsap.to(magnetButtonfill, 0.6, {
                         y: '-76%',
                         ease: 'power2.inOut'
-                    });
+                    })
                 }
 
                 if (window.innerWidth > 540) {
@@ -141,12 +141,12 @@ export const initMagnetic = () => {
                             color: '#1C1D20',
                             ease: 'power3.inOut',
                             delay: 0.3
-                        });
+                        })
                     }
                 }
 
-                return () => ctx3.revert();
-            });
-        });
-    });
-};
+                return () => ctx3.revert()
+            })
+        })
+    })
+}

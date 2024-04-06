@@ -38,6 +38,12 @@
             @include flex(grid);
             gap: 4.5rem;
             width: 100%;
+
+            img {
+                border: 1px solid var(--main-color);
+                filter: grayscale(80%);
+                border-radius: 25px;
+            }
         }
     }
 }

@@ -1,0 +1,106 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    COL__1 SECTION 
+
+*/
+
+.col__1.contact_section {
+    @include container;
+    @include section;
+    @include flex(flex, fle-start, space-between);
+    position: relative;
+    margin-block: 10rem;
+
+    h2 {
+        font-size: 3.75rem;
+        font-weight: 400;
+    }
+
+    span {
+        font-size: 1.357rem;
+        text-align: start;
+        color: var(--second-color);
+    }
+
+    button {
+        .btn-text-m {
+            color: var(--white-color);
+        }
+
+        &.active {
+            background: var(--main-color);
+
+            span {
+                color: var(--white-color);
+            }
+        }
+    }
+
+    .col__1__form {
+        &>ul {
+            @include flex(flex, center);
+            gap: 3rem;
+            padding-inline: 2rem;
+            margin-top: 3rem;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        &>form {
+            @include flex(grid, center, flex-start);
+            width: 100%;
+
+            label {
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+
+            input,
+            textarea {
+                border: none;
+                outline: none;
+                border-radius: 0;
+                font-size: 1.25rem;
+                // border-bottom: 1px solid var(--main-color);
+                padding: 0.8rem;
+                width: 600px;
+                color: var(--second-color);
+                transition: var(--animation-fast);
+            }
+
+            &>div:not(:last-child) {
+                @include flex(grid, center, flex-start);
+                width: 100%;
+                border-bottom: 1px solid var(--second-color);
+                padding-block: 1rem;
+                padding-inline: 2rem;
+
+                // &:nth-child(1) {
+                //     border-top: 1px solid var(--second-color);
+                // }
+
+                &:nth-child(4) {
+                    textarea {
+                        min-height: 250px;
+                    }
+                }
+            }
+
+            .col__1__form__btn {
+                padding-top: 2.5rem;
+                place-self: end;
+            }
+        }
+    }
+}

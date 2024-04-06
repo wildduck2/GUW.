@@ -1,6 +1,9 @@
 import gsap from 'gsap';
 
 export const other_pages = () => {
+    const onceInView = document.querySelector('.once-in-view') as HTMLDivElement;
+    if (!onceInView) return;
+
     gsap.set('.once-in-view img', {
         // y: 100,
         scale: 1.4

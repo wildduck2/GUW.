@@ -1,0 +1,17 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+/*
+
+    COL__2 SECTION 
+
+*/
+
+.col__2.works_section {
+    @include text__section;
+}

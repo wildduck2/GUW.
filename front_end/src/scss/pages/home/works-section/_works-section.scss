@@ -127,9 +127,10 @@
 
     .works__section__btn {
         @include flex(flex, center, center);
+        place-content: center;
         margin-top: 2rem;
 
-        button {
+        .works-btn {
             background: var(--white-color);
 
             & .btn-text {

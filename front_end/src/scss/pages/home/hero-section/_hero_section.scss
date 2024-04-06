@@ -47,6 +47,10 @@
             &__btn {
                 @include button;
                 place-self: flex-start;
+
+                span {
+                    color: var(--white-color);
+                }
             }
         }
 

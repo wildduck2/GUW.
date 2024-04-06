@@ -31,12 +31,66 @@
         color: var(--second-color);
     }
 
-    .col__1__btn__wrapper {
-        @include flex(flex, flex-start, center);
+    button {
+        background: var(--white-color);
 
-        button {
-            background: var(--white-color);
+        span {
             color: var(--main-color);
+        }
+
+        &.active {
+            background: var(--main-color);
+
+            span {
+                color: var(--white-color);
+            }
+        }
+    }
+
+    .col__1__btn {
+        margin-inline: auto;
+        width: fit-content;
+        background: var(--white-color);
+
+        span {
+            color: var(--main-color);
+        }
+    }
+
+    .filters-wrapper {
+        @include flex(flex, flex-start);
+        gap: 2rem;
+
+        .btn-text-m {
+            color: var(--main-color);
+            position: relative;
+
+            .count {
+                @include count;
+            }
+        }
+
+        &.active {
+            background-color: var(--main-color);
+            color: var(--white-color);
+
+            .btn-text-m {
+                color: var(--white-color);
+            }
+
+            .btn-fill {
+                display: none;
+            }
+
+            &:hover {
+                svg {
+                    stroke: var(--white-color);
+                }
+            }
+
+            svg {
+                stroke: var(--white-color);
+            }
         }
     }
 
