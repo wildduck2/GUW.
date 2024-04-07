@@ -59,7 +59,12 @@
 
     .filters-wrapper {
         @include flex(flex, flex-start);
+        flex-wrap: wrap;
         gap: 2rem;
+
+        @include breakpoint(large) {
+            @include flex(flex, flex-start);
+        }
 
         .btn-text-m {
             color: var(--main-color);
