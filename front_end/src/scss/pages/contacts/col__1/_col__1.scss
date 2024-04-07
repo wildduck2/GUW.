@@ -19,6 +19,10 @@
     position: relative;
     margin-block: 10rem;
 
+    @include breakpoint-down(large) {
+        @include flex(grid);
+    }
+
     h2 {
         font-size: 3.75rem;
         font-weight: 400;
