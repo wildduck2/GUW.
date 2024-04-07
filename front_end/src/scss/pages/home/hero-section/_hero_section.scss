@@ -15,7 +15,12 @@
 .hero__section {
     @include container;
     @include section;
-    @include flex(flex, flex-start, space-between);
+    @include flex(grid, flex-start, space-between);
+    gap: 7rem;
+
+    @include breakpoint(large) {
+        @include flex(flex, flex-start, space-between);
+    }
 
     &__right {
         @include flex(grid, center, flex-start);
@@ -31,15 +36,15 @@
             }
 
             &__title {
-                font-size: 3rem;
+                font-size: clamp(1.6rem, 1.2620689655172415rem + 1.9310344827586206vw, 3rem);
                 font-weight: 400;
                 color: var(--main-color);
                 max-width: 670px;
             }
 
             &__text {
-                font-size: 1.1rem;
-                max-width: 500px;
+                font-size: var(--p);
+                max-width: 520px;
                 font-weight: 500;
                 color: var(--second-color);
             }
@@ -63,17 +68,28 @@
 
             h2 {
                 font-size: 1.5rem;
+                font-size: 1rem;
+                font-size: clamp(1rem, 0.8793103448275862rem + 0.6896551724137931vw, 1.5rem);
                 font-weight: 500;
                 color: var(--main-color);
             }
 
             p {
+                font-size: var(--p);
                 color: var(--second-color);
             }
 
             &>div:first-child {
-                @include flex(flex, center);
+                @include flex(grid, center);
                 gap: 2rem;
+
+                @include breakpoint(small) {
+                    @include flex(flex, center);
+                }
+
+                @include breakpoint-down(large) {
+                    @include flex(grid, center);
+                }
 
                 &>div {
                     @include hero_cards;
@@ -92,12 +108,21 @@
 
             &>div:last-child {
                 @include hero_cards;
+                @include flex(grid, center);
                 overflow: hidden;
-                @include flex(flex, center);
-                gap: 5.5rem;
+                gap: 1.5rem;
+
+                @include breakpoint(small) {
+                    @include flex(flex, center);
+                }
+
+                @include breakpoint(xlarge) {
+                    gap: 5.5rem;
+                }
 
                 img {
                     margin-bottom: -7px;
+                    border-radius: 14px;
                 }
 
                 &>div {
@@ -136,6 +161,8 @@
             @include flex(flex, center);
             overflow: hidden;
             height: 765px;
+            width: clamp(17.5rem, 13.295258620689655rem + 29.74137931034483vw, 39.0625rem);
+            margin-inline: auto;
 
             img {
                 scale: 1.5;

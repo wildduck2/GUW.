@@ -40,7 +40,7 @@
 
             h2 {
                 position: initial;
-                @include split_heading(7.5rem);
+                @include split_heading(var(--h2-text-section));
                 text-align: start;
                 padding: 0 7vw 7vw 0;
                 max-width: 20ch;
@@ -65,9 +65,13 @@
     .values__section__video {
         width: 50vw;
         height: 130vh;
-        -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
         overflow: hidden;
+        display: none;
+
+        @include breakpoint(medium) {
+            display: block;
+        }
 
         video {
             width: 50vw;
@@ -77,20 +81,25 @@
     }
 
     &__content {
-        @include flex(grid, center);
-        place-items: flex-start;
+        @include flex(grid, center, center);
+        margin-inline: auto;
+        gap: 2rem;
 
-        gap: 3rem;
+        @include breakpoint(medium) {
+            @include flex(grid, center);
+            place-items: flex-start;
+            gap: 3rem;
+        }
 
         &__title {
-            font-size: 3.3rem;
+            font-size: var(--h2);
             font-weight: 400;
             overflow: hidden;
         }
 
         &__text {
             max-width: 600px;
-            font-size: 1.2rem;
+            font-size: var(--p);
 
             .line {
                 overflow: hidden;

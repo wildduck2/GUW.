@@ -34,12 +34,12 @@
 
         &__title {
             overflow: hidden;
-            font-size: 3.3rem;
+            font-size: var(--h2);
             font-weight: 400;
         }
 
         &__text {
-            font-size: 1rem;
+            font-size: var(--p);
             color: var(--second-color);
             max-width: 600px;
         }
@@ -63,16 +63,20 @@
 
         &__list {
             @include flex(flex, center);
-            gap: 7rem;
-            // margin-block: 4rem 2rem;
-            padding-inline: 3.5rem;
+            gap: 3rem;
+            padding-inline: 1.5rem;
+
+            @include breakpoint(large) {
+                gap: 7rem;
+                padding-inline: 3.5rem;
+            }
 
             &__item {
                 @include flex(grid, center, center);
                 @include border;
-                padding: 1.3rem 1.6rem;
+                padding: 0.7rem 0.9rem;
                 border-radius: 0.7em;
-                min-width: 350px;
+                min-width: 250px;
                 gap: 0.5rem;
 
                 &>div {
@@ -84,16 +88,21 @@
 
                     h3 {
                         font-family: var(--english-font);
-                        font-size: 2rem;
+                        font-size: var(--h3);
                         font-weight: 300;
                         order: -1;
                     }
                 }
 
                 &>p {
-                    font-size: 1rem;
+                    font-size: var(--p);
                     color: var(--second-color);
                     text-align: start;
+                }
+
+                @include breakpoint(large) {
+                    min-width: 350px;
+                    padding: 1.3rem 1.6rem;
                 }
             }
         }
@@ -101,6 +110,10 @@
 
     &>.wrapper__2 {
         @include flex(grid, center, space-around);
-        margin-block: 4rem;
+        margin-block: 2rem;
+
+        @include breakpoint(large) {
+            margin-block: 4rem;
+        }
     }
 }

@@ -21,10 +21,14 @@
     margin-block: 10rem 3rem;
     gap: 2.5rem;
 
+    @include breakpoint(large) {
+        padding-block: 1rem;
+    }
+
     &__col1 {
         h2 {
             max-width: 1100px;
-            font-size: 3.3rem;
+            font-size: var(--h2);
             font-weight: 400;
         }
     }
@@ -45,8 +49,13 @@
         img {
             position: absolute;
             top: -30%;
-            width: 25px;
-            height: 25px;
+            width: 21px;
+            height: 21px;
+
+            @include breakpoint(large) {
+                width: 25px;
+                height: 25px;
+            }
         }
     }
 
@@ -62,14 +71,12 @@
 
     &__col3 {
         position: relative;
-        @include flex(flex, center);
-        gap: 3rem;
+        @include flex(grid, center);
+        gap: 1rem;
         margin-bottom: 2rem;
         padding-bottom: 1rem;
 
         button {
-            padding-inline: 8rem;
-
             div {
                 color: var(--white-color);
             }
@@ -78,11 +85,33 @@
         .stripe {
             top: 150%;
         }
+
+        @include breakpoint(medium) {
+            @include flex(flex, center);
+            gap: 2rem;
+
+            button {
+                padding-inline: 4rem;
+            }
+        }
+
+        @include breakpoint(large) {
+            @include flex(flex, center);
+            gap: 3rem;
+
+            button {
+                padding-inline: 8rem;
+            }
+        }
     }
 
     &__col4 {
-        @include flex(flex, center, space-between);
+        @include flex(grid, center);
         gap: 3rem;
+
+        @include breakpoint(large) {
+            @include flex(flex, center, space-between);
+        }
     }
 }
 

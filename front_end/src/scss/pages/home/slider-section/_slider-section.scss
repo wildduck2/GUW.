@@ -17,23 +17,41 @@
     @include flex(grid, center, center);
     gap: 3.4rem;
     background: var(--main-color);
-    padding-block: 10rem;
-    margin-block: 10rem;
+    padding-block: 6rem;
+    margin-block: 6rem;
+
+    @include breakpoint(large) {
+        padding-block: 10rem;
+        margin-block: 10rem;
+    }
 
     &>div {
         @include flex(grid, center, center);
-        gap: 3.4rem;
+        gap: 2.4rem;
+
+        @include breakpoint(large) {
+            gap: 3.4rem;
+        }
     }
 
     &__slider {
         @include container;
         @include flex(flex, cneter, cneter);
-        gap: 3.4rem;
+        gap: 2.4rem;
         text-align: center;
         place-items: center;
 
         img {
             filter: grayscale(100%);
+            width: 50%;
+        }
+
+        @include breakpoint(large) {
+            gap: 3.4rem;
+
+            img {
+                width: 100%;
+            }
         }
 
         &.slider__1 {

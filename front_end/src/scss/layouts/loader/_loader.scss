@@ -13,8 +13,6 @@
 */
 
 .loader__wrappper {
-    // display: none;
-
     .loader {
         position: fixed;
         width: 101%;
@@ -26,7 +24,7 @@
         @include flex(flex, flex-end, flex-end);
 
         h2 {
-            @include split_heading(7.5rem);
+            @include split_heading(var(--h2-text-section));
             position: absolute;
             bottom: 7vw;
             left: 7vw;

@@ -21,14 +21,17 @@
     padding-bottom: 10rem;
 
     &>h2 {
-        font-size: 1.3rem;
+        font-size: var(--p);
         font-weight: 400;
         color: var(--second-color);
     }
 
     .projects-wrapper {
         @include flex(grid, center);
-        border-bottom: 1px solid rgba(28, 29, 32, 0.175);
+
+        @include breakpoint(large) {
+            border-bottom: 1px solid rgba(28, 29, 32, 0.175);
+        }
 
         &.menu {
             & picture {
@@ -136,6 +139,116 @@
             & .btn-text {
                 color: var(--main-color);
             }
+        }
+    }
+}
+
+.grid {
+
+    .propject-table-line,
+    .region {
+        display: none;
+    }
+
+    & .float-project-container {
+        @include flex(grid, center, center);
+        gap: clamp(5rem, 4.146341463414634rem + 4.878048780487805vw, 10rem) clamp(3.5rem, 3.4146341463414633rem + 0.4878048780487805vw, 4rem);
+
+        @include breakpoint(medium) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @each $index, $color in $arrOfColor {
+            & .project:nth-child(#{$index}) picture {
+                background-color: $color;
+                display: flex;
+                padding: clamp(2.5rem, 1.731707317073171rem + 4.390243902439024vw, 7rem) clamp(1rem, 0.6585365853658536rem + 1.951219512195122vw, 3rem);
+                height: fit-content;
+                margin-bottom: 2rem;
+                font-size: clamp(0.5rem, 0.24390243902439024rem + 1.4634146341463414vw, 2rem);
+                width: fit-content;
+
+                & img {
+                    display: flex;
+                    width: 100%;
+                    height: auto;
+                    transition: var(--animation-fast);
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.02) !important;
+                    }
+                }
+            }
+        }
+
+        & .project {
+            position: relative;
+            transform: scaleY(0);
+            width: 0;
+            // height: 749.6px;
+            opacity: 0;
+            transition: var(--animation-fast);
+            transform-origin: center;
+            margin: clamp(-5rem, 4.146341463414634rem + 4.878048780487805vw, -10rem) clamp(-3.5rem, 3.4146341463414633rem + 0.4878048780487805vw, -4rem);
+
+            &.show {
+                margin: 0;
+                opacity: 1;
+
+                transform: scaleY(1);
+                width: fit-content;
+                // width: 613px;
+                // height: 749.6px;
+            }
+
+            & .row {
+                position: relative;
+
+                & * {
+                    color: var(--color-dark);
+                }
+
+                & .name {
+                    margin-bottom: 1.5rem;
+                    font-size: clamp(size('medium-size') + 0.2rem, 4.5vw, size('big-size') - 0.2rem);
+                    font-weight: weight('w-450');
+                    color: var(--color-dark);
+                    transform: translateX(0) rotate(0.001deg);
+                    transition: var(--animation-fast);
+                }
+
+                & .year {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                & .stripe {
+                    display: block;
+                    width: 100%;
+                    max-width: 1500px;
+                    height: 1px;
+                    position: absolute;
+                    bottom: 2.5rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-inline: auto;
+                    background-color: rgba(28, 29, 32, 0.175);
+                }
+            }
+
+            font-size: clamp(size('medium-size'), 4.5vw, size('titles-size'));
+            // color: $clr-black-dark;
+            // color: $clr-orange;
+        }
+
+        .projects-conatiner-animation {
+            @include flex(grid, center);
+            place-self: center;
+            grid-template-columns: repeat(1, 1fr);
+            gap: clamp(2rem, 1vw, 6rem);
         }
     }
 }

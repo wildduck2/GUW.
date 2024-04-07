@@ -18,7 +18,8 @@ import {
     col_2,
     col_3,
     WorksFilter,
-    col_1_2
+    col_1_2,
+    addGridStyle
 } from './pages'
 import { footer__section, menu_functionality, text__section } from './layouts'
 import { col_1_3 } from './pages/credits'
@@ -28,6 +29,7 @@ export const initALLScripts = () => {
     initMousePose()
     initMagnetic()
     menu_functionality()
+    addGridStyle()
 
     //INFO: HOME
     hero_animation()
@@ -45,7 +47,7 @@ export const initALLScripts = () => {
 
     //INFO: WORKS
     WorksFilter()
-    // col_1_2()
+    col_1_2()
 
     //INFO: CREDITS
     col_1_3()

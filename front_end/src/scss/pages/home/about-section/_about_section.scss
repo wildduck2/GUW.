@@ -32,12 +32,12 @@
 
     &>h2 {
         max-width: 1100px;
-        font-size: 3.3rem;
+        font-size: var(--h2);
         font-weight: 400;
     }
 
     &>p {
-        font-size: 1rem;
+        font-size: var(--p);
         color: var(--second-color);
         max-width: 700px;
     }
@@ -57,24 +57,38 @@
 
     .logos__wrapper {
         @include flex(flex, center, space-around);
+
+        @include breakpoint-down(medium) {
+            overflow: hidden;
+        }
     }
 
     &__logos {
         @include flex(flex, center, space-around);
-        gap: 4rem;
-        margin-top: 3rem;
-        padding-inline: 2rem;
+        gap: 2rem;
+        margin-top: 1rem;
+        padding-inline: 1rem;
         min-width: 100%;
         flex-shrink: 0;
         overflow-y: hidden;
         transform: translateX(50%);
+
+        @include breakpoint(medium) {
+            gap: 4rem;
+            margin-top: 3rem;
+            padding-inline: 2rem;
+        }
 
         li {
             transform: translateX(0%) translateY(120%) scale(1) rotate(0.001deg);
         }
 
         img {
-            width: 77%;
+            width: 50%;
+
+            @include breakpoint(medium) {
+                width: 77%;
+            }
         }
     }
 }

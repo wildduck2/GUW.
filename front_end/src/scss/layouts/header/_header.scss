@@ -21,30 +21,46 @@
 
         &__logo {
             flex: 1;
+
+            img {
+                width: 80px;
+
+                @include breakpoint(xlarge) {
+                    width: auto;
+                }
+            }
         }
 
         &__container {
-            flex: 1;
             @include flex(flex, center, space-between);
 
+            @include breakpoint(large) {
+                flex: 1;
+            }
+
             &__menu {
-                @include flex(flex, center, space-between);
                 gap: 3rem;
+                display: none;
+
+                @include breakpoint(large) {
+                    @include flex(flex, center, space-between);
+                }
 
                 a {
                     display: grid;
-                    gap: 0.5rem;
 
-                    & .dot {
-                        &.dot__active {
+                    &.dot__active {
+                        margin-bottom: -0.9rem;
+                        gap: 0.5rem;
+
+                        & .dot {
+                            place-self: center;
+                            border-radius: 50%;
+                            background: var(--main-color);
+                            animation: var(--animation-smooth);
                             width: 5px;
                             height: 5px;
                         }
-
-                        place-self: center;
-                        border-radius: 50%;
-                        background: var(--main-color);
-                        animation: var(--animation-smooth);
                     }
                 }
             }
