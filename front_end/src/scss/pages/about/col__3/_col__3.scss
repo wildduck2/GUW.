@@ -20,10 +20,14 @@
     position: relative;
 
     &>div {
-        @include flex(flex, flex-start, space-between);
+        @include flex(grid, flex-start, space-between);
         @include container;
         width: 100%;
         margin-block: auto;
+
+        @include breakpoint(large) {
+            @include flex(flex, flex-start, space-between);
+        }
 
         &>div {
             @include flex(grid, flex-start, space-between);

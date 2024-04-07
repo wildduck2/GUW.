@@ -14,8 +14,12 @@
 
 .col__2 {
     @include container;
-    @include flex(flex, flex-start, space-between);
+    @include flex(grid, flex-start, space-between);
     margin-block: 10rem;
+
+    @include breakpoint(large) {
+        @include flex(flex, flex-start, space-between);
+    }
 
     & div:nth-child(2) {
         place-content: initial;

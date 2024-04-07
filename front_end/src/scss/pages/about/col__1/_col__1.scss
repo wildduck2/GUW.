@@ -15,26 +15,33 @@
 .about__col {
     @include container;
     @include section;
-    @include flex(flex, flex-start, space-between);
+    @include flex(grid, flex-start, space-between);
     position: relative;
     margin-block: 10rem;
     gap: 4rem;
 
+    @include breakpoint(large) {
+        @include flex(flex, flex-start, space-between);
+    }
+
     &>div {
         @include flex(grid, flex-start);
         text-align: start;
-        place-content: center;
         gap: 1.5rem;
 
+        @include breakpoint(large) {
+            place-content: center;
+        }
+
         p {
-            font-size: 1.357rem;
+            font-size: var(--p);
             font-weight: 400;
             color: var(--second-color);
             line-height: 44px;
         }
 
         h2 {
-            font-size: 3.75rem;
+            font-size: var(--h2);
             font-weight: 400;
         }
 
