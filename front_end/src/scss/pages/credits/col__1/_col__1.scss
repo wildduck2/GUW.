@@ -21,28 +21,46 @@
     gap: 7rem;
 
     h2 {
-        font-size: 3.75rem;
+        font-size: var(--h2);
         font-weight: 400;
     }
 
     span {
-        font-size: 1.357rem;
+        font-size: var(--p);
         text-align: start;
         color: var(--second-color);
     }
 
     &>div:nth-child(2) {
-        @include flex(flex, flex-start, space-between);
+        @include flex(grid);
+        gap: 2rem;
+
+        @include breakpoint(medium) {
+            @include flex(grid);
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint(large) {
+            @include flex(flex, flex-start, space-between);
+        }
 
         &>ul {
             @include flex(grid);
-            gap: 4.5rem;
             width: 100%;
+            gap: 2rem;
+
+            @include breakpoint(large) {
+                gap: 4.5rem;
+            }
 
             img {
                 border: 1px solid var(--main-color);
                 filter: grayscale(80%);
                 border-radius: 25px;
+
+                @include breakpoint-down(small) {
+                    width: 245px;
+                }
             }
         }
     }

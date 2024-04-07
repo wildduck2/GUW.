@@ -43,6 +43,11 @@ p {
     --container-padding: clamp(2.5rem, 1.5609756097560976rem + 5.365853658536586vw, 8rem);
     --gap-padding: clamp(1.5em, 4vw, 2.5em);
 
+    --h2: clamp(2rem, 1.4382716049382718rem + 3.209876543209876vw, 3.3rem);
+    --h3: clamp(1.4rem, 1.1407407407407406rem + 1.4814814814814816vw, 2rem);
+    --p: clamp(0.8rem, 0.7135802469135804rem + 0.4938271604938271vw, 1rem);
+    --h2-text-section: clamp(1.6rem, 0.17586206896551726rem + 8.13793103448276vw, 7.5rem);
+
     --f-body: clamp(0.9375rem, 0.6298076923076923rem + 0.4807692307692308vw, 1rem);
     --f-sm: #{u.rem(12)};
     --f-md: #{u.rem(13)};

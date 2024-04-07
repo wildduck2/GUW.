@@ -32,8 +32,12 @@
 }
 
 @mixin section {
-    padding-block: 4rem 10rem;
+    padding-block: 2rem 2rem;
     width: 100%;
+
+    @include u.breakpoint(large) {
+        padding-block: 4rem 10rem;
+    }
 }
 
 @mixin button {
@@ -147,7 +151,7 @@
     h2 {
         position: absolute;
         inset: 25vw 11vw 0 0;
-        font-size: 4.75rem;
+        font-size: var(--h2-text-section);
         font-weight: 200;
         color: var(--white-color);
     }

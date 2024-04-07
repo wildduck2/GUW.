@@ -4,7 +4,7 @@
 
 */
 
-@use "./functions" as f;
+@use './functions' as f;
 
 /*
 
@@ -14,19 +14,19 @@
 
 // 700px, 900px, 1440px
 $breakpoints-up: (
-    "small": f.em(450),
-    "medium": f.em(700),
-    "large": f.em(900),
-    "xlarge": f.em(1440),
+    'small': f.em(450),
+    'medium': f.em(700),
+    'large': f.em(900),
+    'xlarge': f.em(1440)
 );
 
 // 452.98px (flex), 617.98 (grid), 699.98px, 899.98px, 1339.98px
 $breakpoints-down: (
-    "xsmall": f.em(617.98),
-    "small": f.em(699.98),
-    "medium": f.em(899.98),
-    "large": f.em(1023.98),
-    "extra-large": f.em(1339.98),
+    'xsmall': f.em(617.98),
+    'small': f.em(699.98),
+    'medium': f.em(899.98),
+    'large': f.em(1023.98),
+    'extra-large': f.em(1339.98)
 );
 
 @mixin breakpoint($size) {
