@@ -1,0 +1,77 @@
+/*
+    This code is writen by Ahmed Ayob
+
+*/
+
+@use '../../base' as *;
+@use '../../utils' as *;
+
+/*
+
+    Hamburger 
+
+*/
+
+.hamburger-button-wrapper {
+    position: fixed;
+    top: clamp(1rem, -0.05882352941176472rem + 5.88235294117647vw, 2rem);
+    left: clamp(1rem, -2rem + 16.666666666666664vw, 2rem);
+    transition: transform 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+    transform: translateY(0%) scale(0) rotate(0.001deg);
+    z-index: 210;
+
+    &.show-hamburger-scroll {
+        transform: translateY(0%) scale(1) rotate(0.001deg);
+    }
+
+    &.active-hamburger {
+        transform: translateY(0%) scale(1) rotate(0.001deg);
+
+        .hamburger-btn {
+            background-color: var(--main-color);
+
+            .btn-text {
+                span {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(3px, 3px);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(-45deg) translate(1px, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    .hamburger-btn {
+        width: clamp(4.375rem, 4.044117647058823rem + 1.8382352941176472vw, 6.25rem);
+        height: clamp(4.375rem, 4.044117647058823rem + 1.8382352941176472vw, 6.25rem);
+        overflow: hidden;
+        background: var(--main-color);
+
+        .btn-text {
+            @include flex(grid);
+            place-content: center;
+            gap: 0.3rem;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            pointer-events: none;
+
+            span {
+                display: block;
+                height: 2px;
+                width: clamp(32px, 10vw, 27px);
+                border-radius: 50rem;
+                background: var(--white-color);
+                transform-origin: center;
+                transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+
+                @include breakpoint(meduim) {
+                    width: clamp(2rem, 1.8345588235294117rem + 0.9191176470588236vw, 2.1rem);
+                }
+            }
+        }
+    }
+}

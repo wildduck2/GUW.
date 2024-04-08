@@ -1,0 +1,134 @@
+/*
+    this code is writen by ahmed ayob
+
+*/
+
+@use '../../base' as *;
+@use '../../utils' as *;
+
+/*
+
+    main menu 
+
+*/
+
+.main__menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white-color);
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: var(--animation-slow);
+
+    &.active {
+        transform: translateY(0);
+
+        li {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    * {
+        color: var(--main-color);
+    }
+
+    &__background {
+        background-image: radial-gradient(rgba(0, 0, 0, 0.1) 9%, transparent 9%);
+        background-position: 0% 0%;
+        background-size: 12vmin 12vmin;
+        height: 100vh;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        transition:
+            opacity 800ms ease,
+            background-size 800ms ease,
+            background-position 800ms ease;
+        width: 100vw;
+        z-index: 1;
+    }
+
+    //NOTE: makin' func for the menu animation
+    @for $i from 0 to 4 {
+        &[data-active-index='#{$i}']>&__background {
+            background-position: center calc(20% * #{$i});
+        }
+    }
+
+    @for $i from 0 to 4 {
+        &[data-active-index='#{$i}']>&__img {
+            background-position: center calc(20% * #{$i});
+        }
+    }
+
+    //NOTE: the background img
+    &__img {
+        position: fixed;
+        opacity: 0;
+        background-image: url('/src/assets/imgs/menu__img.jpg');
+        background-position: center 40%;
+        background-size: 110vmax;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        transition:
+            opacity 800ms ease,
+            background-size 800ms ease,
+            background-position 800ms ease;
+        width: 100%;
+        z-index: 0;
+    }
+
+    &__list {
+        @include container;
+        @include section;
+        @include flex(grid, center);
+        margin-right: 8rem;
+        margin-block: 10em;
+        position: relative;
+        gap: 5rem;
+        width: 100vw;
+        overflow: hidden;
+        z-index: 2;
+
+        &:hover {
+            li {
+                opacity: 0.5;
+                transition: 0.8s ease-out;
+            }
+
+            &~.main__menu__background {
+                background-size: 11vmin 11vmin;
+                opacity: 0.5;
+            }
+
+            &~.main__menu__img {
+                background-size: 100vmax;
+                opacity: 0.1;
+            }
+        }
+
+        li {
+            transform: translateX(100%);
+            opacity: 0;
+
+            @for $i from 0 to 5 {
+                &:nth-child(#{$i}) {
+                    transition: 0.8s ease-out calc(0.15s * #{$i});
+                }
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+
+            a {
+                font-size: var(--h2);
+                font-weight: 300;
+            }
+        }
+    }
+}
