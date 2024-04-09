@@ -1,1 +1,8 @@
-{}
+{
+    "rewrites": [
+        {
+            "source": "/front_end/(.*)",
+            "destination": "/front_end/index.html"
+        }
+    ]
+}
