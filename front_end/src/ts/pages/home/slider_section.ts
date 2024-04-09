@@ -1,10 +1,9 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import gsap from 'gsap'
 
 export const slider_section = () => {
-    const el = document.querySelector('.slider__section') as HTMLDivElement;
+    const el = document.querySelector('.slider__section') as HTMLDivElement
 
-    if (!el) return;
+    if (!el) return
     gsap.context(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -16,11 +15,11 @@ export const slider_section = () => {
                 // markers: true
             },
             defaults: { ease: 'Power1.inOut' }
-        });
+        })
 
         tl.to('.slider__1', {
             transform: 'translate(15%, 0) scale(1) rotate(0.001deg)'
-        });
+        })
 
         tl.to(
             '.slider__2',
@@ -28,6 +27,6 @@ export const slider_section = () => {
                 transform: 'translate(30%, 0) scale(1) rotate(0.001deg)'
             },
             '<'
-        );
-    });
-};
+        )
+    })
+}

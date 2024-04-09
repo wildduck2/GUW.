@@ -1,4 +1,4 @@
-import barba from '@barba/core';
+import barba from '@barba/core'
 import {
     delay,
     initLoaderHome,
@@ -6,47 +6,46 @@ import {
     initPageEnter,
     initPageLeave,
     initPageOnce
-} from './initLoading';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import Lenis from '@studio-freight/lenis';
-import { initALLScripts } from '../main';
-import SplitType from 'split-type';
+} from './initLoading'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+import Lenis from '@studio-freight/lenis'
+import { initALLScripts } from '../main'
 
 export const initBarbaAnimation = () => {
     //NOTE: init lenis
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
 
     const lenis = new Lenis({
         lerp: 0.1,
         syncTouchLerp: 0.1,
         smoothWheel: true
-    });
+    })
     //TODO: make sure to re init the scroll thing when window resize
 
-    lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', ScrollTrigger.update)
 
     gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-    });
+        lenis.raf(time * 1000)
+    })
 
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(0)
 
     // NOTE: do something before the transition starts
     barba.hooks.before(() => {
-        document.querySelector('html')!.classList.add('is-transitioning');
-    });
+        document.querySelector('html')!.classList.add('is-transitioning')
+    })
 
     // NOTE: do something after the transition finishes
     barba.hooks.after(() => {
-        document.querySelector('html')!.classList.remove('is-transitioning');
-    });
+        document.querySelector('html')!.classList.remove('is-transitioning')
+    })
 
     //NOTE: scroll to the top of the page
     barba.hooks.afterEnter(() => {
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0)
         //TODO: cookie functionality
-    });
+    })
 
     // TODO: idk what to call it but it's a clearing thing
     // if (window.innerWidth > 540) {
@@ -59,29 +58,28 @@ export const initBarbaAnimation = () => {
     // }
 
     barba.init({
-        sync: true,
         debug: false,
         timeout: 7000,
         transitions: [
             {
                 name: 'works',
                 async once() {
-                    initPageOnce();
+                    initPageOnce()
                 },
                 async leave({ current }) {
                     // NOTE: animate loading screen in
-                    initPageLeave();
-                    await delay(695);
-                    current.container.remove();
+                    initPageLeave()
+                    await delay(695)
+                    current.container.remove()
                 },
                 async enter(data) {
                     // NOTE: animate loading screen away
-                    initNextWord(data);
-                    initPageEnter();
+                    initNextWord(data)
+                    initPageEnter()
                 },
                 async beforeEnter() {
-                    ScrollTrigger.getAll().forEach((t) => t.kill());
-                    initALLScripts();
+                    ScrollTrigger.getAll().forEach((t) => t.kill())
+                    initALLScripts()
                 }
             },
             {
@@ -91,9 +89,9 @@ export const initBarbaAnimation = () => {
                     namespace: ['home']
                 },
                 once() {
-                    initLoaderHome();
+                    initLoaderHome()
                 }
             }
         ]
-    });
-};
+    })
+}

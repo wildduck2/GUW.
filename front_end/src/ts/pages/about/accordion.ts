@@ -1,17 +1,16 @@
 export const accordion = () => {
-    const el = document.querySelectorAll('.accordion li') as NodeList<HTMLLIElement>;
-    const headers = document.querySelectorAll('.accordion-header') as NodeList<HTMLDivElement>;
-    const ps = document.querySelectorAll('.about__col__p') as NodeList<HTMLDivElement>;
+    const el = document.querySelectorAll('.accordion li') as NodeListOf<HTMLLIElement>
+    const headers = document.querySelectorAll('.accordion-header') as NodeListOf<HTMLDivElement>
 
-    if (!el) return;
+    if (!el) return
 
-    headers.forEach((item: HTMLLIElement, index: number) => {
+    headers.forEach((item, index: number) => {
         item.addEventListener('click', () => {
             el.forEach((li: HTMLLIElement) => {
-                li.classList.remove('active');
-            });
+                li.classList.remove('active')
+            })
 
-            el[index].classList.add('active');
-        });
-    });
-};
+            el[index].classList.add('active')
+        })
+    })
+}

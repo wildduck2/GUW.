@@ -2,7 +2,6 @@ import { ITransitionData } from '@barba/core'
 import { gsap } from 'gsap/gsap-core'
 import SplitType from 'split-type'
 import { initHomePage, initHomePageAnimations } from './home_animations'
-import { works_db } from '../db'
 
 export const initPageOnce = () => {
     const tl = gsap.timeline({})

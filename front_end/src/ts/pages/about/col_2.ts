@@ -106,7 +106,7 @@ export const col_2 = () => {
             )
 
             // NOTE: pin
-            const tl3 = gsap.timeline({
+            gsap.timeline({
                 scrollTrigger: {
                     trigger: '.col__2',
                     start: 'top 40%',

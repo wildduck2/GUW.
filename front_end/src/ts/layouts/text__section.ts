@@ -10,8 +10,6 @@ export const text__section = () => {
     })
     if (!document.querySelector('.pin__section')) return
 
-    const mm = gsap.matchMedia()
-    // mm.add('(min-width: 768px)', () => {
     gsap.context(() => {
         gsap.set('.pin__section h2 .word', {
             yPercent: 100
@@ -68,5 +66,4 @@ export const text__section = () => {
             ease: 'Power1.inOut'
         })
     })
-    // })
 }

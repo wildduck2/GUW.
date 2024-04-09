@@ -3,6 +3,6 @@ import { homeHandler } from '../controlers';
 
 const homeRoute = Router();
 
-homeRoute.get('/', homeHandler);
+homeRoute.get('/works', homeHandler);
 
 export { homeRoute };
