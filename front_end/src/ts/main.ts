@@ -28,7 +28,6 @@ export const initALLScripts = () => {
     initFontWeight()
     initMousePose()
     initMagnetic()
-    menu_functionality()
     addGridStyle()
 
     //INFO: HOME
@@ -59,4 +58,5 @@ export const initALLScripts = () => {
 }
 
 initALLScripts()
+menu_functionality()
 initBarbaAnimation()

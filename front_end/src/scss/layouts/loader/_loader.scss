@@ -20,7 +20,7 @@
         left: 50%;
         transform: translateX(-50%);
         background: var(--main-color);
-        z-index: 100;
+        z-index: 200;
         @include flex(flex, flex-end, flex-end);
 
         h2 {
