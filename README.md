@@ -1,15 +1,13 @@
+# GUW
 
-# BeliBeli
-
-BeliBeli: Independently developed an e-commerce clothes shop built with React as a front end and superbase to serve the back end with an auth system and payment method ready to rock.
-
-![Protofolio Screenshot]()
+GUW: Developed and designed a personal website showcasing my projects, skills, and experiences using modern web technologies and responsive design principles.
+![Protofolio Screenshot](https://zpgqhogoevbgpxustvmo.supabase.co/storage/v1/object/public/produc_imgs/products/Fri%20Apr%20%205%2009:05:18%20PM%20EET%202024.png)
 
 [Project Description]
 
-- **Tech Stack:** REACT, SCSS, TypeScript, GSAP, Supabase, Redux
-- **GitHub Repository:** [Link](<)>)
-- **Live Demo:** [Link]()
+- **Tech Stack:** HTML, SCSS, TypeScript, GSAP, barbajs, lenuis
+- **GitHub Repository:** [Link](https://github.com/wildduck2/GUW.)
+- **Live Demo:** [Link](https://golden-united-waterproofing.vercel.app/)
 
 ## Contact
 
@@ -26,4 +24,3 @@ Let's connect and create something amazing together!
 ## License
 
 This portfolio is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
