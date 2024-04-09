@@ -47,7 +47,7 @@
         margin-block: 1rem 2rem;
         overflow: hidden;
 
-        &>button {
+        & button {
             opacity: 0.5;
             transform: translateY(100%) scale(1) rotate(0.001deg);
             background: var(--white-color);

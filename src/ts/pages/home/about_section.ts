@@ -1,19 +1,19 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import SplitType from 'split-type';
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+import SplitType from 'split-type'
 
 export const about_animation = () => {
-    gsap.registerPlugin(ScrollTrigger);
-    const el = document.querySelector('.about__section') as HTMLDivElement;
-    if (!el) return;
+    gsap.registerPlugin(ScrollTrigger)
+    const el = document.querySelector('.about__section') as HTMLDivElement
+    if (!el) return
 
     // NOTE: spliting text
     const aboutTitleWords = new SplitType('.about__section__title', {
         types: 'lines,words'
-    }).words;
+    }).words
     const aboutDiscWords = new SplitType('.about__section__text', {
         types: 'lines,words'
-    }).words;
+    }).words
 
     gsap.context(() => {
         // NOTE: top elements
@@ -29,16 +29,16 @@ export const about_animation = () => {
             defaults: {
                 ease: 'power1.out'
             }
-        });
+        })
 
         tl.set('.button__wrapper', {
             pointerEvents: 'none'
-        });
+        })
 
         tl.to(aboutTitleWords, {
             y: 0,
             stagger: { amount: 0.4 }
-        });
+        })
 
         tl.to(
             aboutDiscWords,
@@ -47,7 +47,7 @@ export const about_animation = () => {
                 stagger: { amount: 0.4 }
             },
             '>'
-        );
+        )
 
         tl.to(
             '.button__wrapper button',
@@ -56,9 +56,9 @@ export const about_animation = () => {
                 opacity: 1
             },
             '-=0.5'
-        );
+        )
 
-        tl.set('.button__wrapper', { overflow: 'visible', pointerEvents: 'all' }, '<');
+        tl.set('.button__wrapper', { overflow: 'visible', pointerEvents: 'all' }, '<')
 
         // NOTE: logos
         const tl2 = gsap.timeline({
@@ -68,7 +68,7 @@ export const about_animation = () => {
                 end: 'bottom bottom',
                 toggleActions: 'play none none none'
             }
-        });
+        })
 
         tl2.to(
             '.about__section__logos li',
@@ -79,7 +79,7 @@ export const about_animation = () => {
                 onStart: () => { }
             },
             '-=0.5'
-        );
+        )
         gsap
             .to('.about__section__logos', {
                 xPercent: 100,
@@ -87,6 +87,6 @@ export const about_animation = () => {
                 ease: 'linear',
                 duration: 10
             })
-            .totalProgress(0.5);
-    });
-};
+            .totalProgress(0.5)
+    })
+}
