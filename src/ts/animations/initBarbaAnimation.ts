@@ -11,6 +11,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Lenis from '@studio-freight/lenis'
 import { initALLScripts } from '../main'
+import { menu_functionality } from '../layouts'
 
 export const initBarbaAnimation = () => {
     //NOTE: init lenis

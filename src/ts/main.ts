@@ -55,8 +55,8 @@ export const initALLScripts = () => {
     other_pages()
     text__section()
     footer__section()
+    menu_functionality()
 }
 
-initALLScripts()
-menu_functionality()
 initBarbaAnimation()
+initALLScripts()

@@ -45,7 +45,7 @@ export const hero_animation = () => {
             )
 
             tl.to(
-                '.hero__section__right__top button',
+                '.hero__section__right__top a',
                 {
                     yPercent: '-=30'
                 },
