@@ -112,8 +112,8 @@ export const col_2 = () => {
                     start: 'top 40%',
                     end: 'bottom bottom',
                     pin: '.col__2__pin',
-                    pinSpacing: true,
-                    scrub: 0.7
+                    // pinSpacing: true,
+                    scrub: 0.1
                 }
             })
         })

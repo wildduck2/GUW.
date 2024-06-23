@@ -24,6 +24,7 @@
         "dotenv": "^16.4.5",
         "gsap": "^3.12.5",
         "sass": "^1.72.0",
-        "split-type": "^0.3.4"
+        "split-type": "^0.3.4",
+        "vite-plugin-imagemin": "^0.6.1"
     }
 }

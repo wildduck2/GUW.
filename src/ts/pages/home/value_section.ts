@@ -51,10 +51,10 @@ export const values_animation = () => {
                     scrub: 1,
                     // invalidateOnRefresh: true,
                     pin: '.values__section',
-                    anticipatePin: 1
-                    // pinType: 'transform',
+                    // anticipatePin: 1
+                    pinType: 'transform',
                     // pinSpacing: '-100%',
-                    // pinnedContainer: '.values__section',
+                    pinnedContainer: '.values__section'
                     // markers: true
                 }
             })
